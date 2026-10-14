@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Iron Plan">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#eef1f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c1220" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAWfmNhQlgAABZ+anVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAAFlhqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOjk0MTliMTE5LTJkNmEtNDMyOC04M2RmLWJkMGQ4YTNjMzIyNgAAAAOTanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAAAuGp1bWIAAABEanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5pbmdyZWRpZW50LnYzAAAAABhjMnNo2H9F+Q5CkeY1+dwsafU97AAAAGxjYm9yo2lkYzpmb3JtYXRpaW1hZ2UvcG5namluc3RhbmNlSUR4LHhtcDppaWQ6ZTRiZjhkZGMtMjQzZC00MzY1LWI4MzktMjk3MGE5NTA0MDU4bHJlbGF0aW9uc2hpcGhwYXJlbnRPZgAAAeJqdW1iAAAAQWp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuYWN0aW9ucy52MgAAAAAYYzJzaKaXSvKvKJuoDefv5D/A56kAAAGZY2JvcqJnYWN0aW9uc4KiZmFjdGlvbmtjMnBhLm9wZW5lZGpwYXJhbWV0ZXJzoWtpbmdyZWRpZW50c4GiY3VybHgtc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5pbmdyZWRpZW50LnYzZGhhc2hYILg3dZu2xVKFO0nlNv2FiM2qydzUtwrSxL+D9VqSIFuepGZhY3Rpb254HWNvbS5hbnRocm9waWMuY2xhdWRlLnByb3ZpZGVkanBhcmFtZXRlcnOheB9jb20uYW50aHJvcGljLm9yaWdpbi1jb25maWRlbmNlZ3Vua25vd25rZGVzY3JpcHRpb254ZkNsYXVkZSBwcm92aWRlZCB0aGlzIGZpbGUgYXQgdGhlIHJlcXVlc3Qgb2YgYSB1c2VyIGFuZCBtYXkgaGF2ZSBjcmVhdGVkIG9yIG1vZGlmaWVkIHRoZSBmaWxlIGNvbnRlbnRzLm1zb2Z0d2FyZUFnZW50oWRuYW1lZkNsYXVkZXJhbGxBY3Rpb25zSW5jbHVkZWT1AAAAyGp1bWIAAABAanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5oYXNoLmRhdGEAAAAAGGMyc2g8mSzr57p1bIazgMiV7OFHAAAAgGNib3KlY2FsZ2ZzaGEyNTZjcGFkTQAAAAAAAAAAAAAAAABkaGFzaFggc5NB52XGEGFA4VM0zT7jbuvCwCN1+fqmAf9UZYpGdXNkbmFtZW5qdW1iZiBtYW5pZmVzdGpleGNsdXNpb25zgaJlc3RhcnQYIWZsZW5ndGgZFooAAAI+anVtYgAAACdqdW1kYzJjbAARABCAAACqADibcQNjMnBhLmNsYWltLnYyAAAAAg9jYm9ypWNhbGdmc2hhMjU2aXNpZ25hdHVyZXhNc2VsZiNqdW1iZj0vYzJwYS91cm46YzJwYTo5NDE5YjExOS0yZDZhLTQzMjgtODNkZi1iZDBkOGEzYzMyMjYvYzJwYS5zaWduYXR1cmVqaW5zdGFuY2VJRHgseG1wOmlpZDowMjFhNjZmZC0wYWQ0LTQ3YWYtYjlmMi1mYzU4ODgzNzY0ZDNyY3JlYXRlZF9hc3NlcnRpb25zg6JjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgguDd1m7bFUoU7SeU2/YWIzarJ3NS3CtLEv4P1WpIgW56iY3VybHgqc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5hY3Rpb25zLnYyZGhhc2hYIH0ZTZuo5jozGVvoMun+tiuQJuN8tspF7emjgM9D0qK0omN1cmx4KXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaGFzaC5kYXRhZGhhc2hYIDdOWEOvoF9dKuesGBlFdyx+EMvJaBKryfEAdCKKeZ8PdGNsYWltX2dlbmVyYXRvcl9pbmZvo2RuYW1lb0FudGhyb3BpYyBGaWxlc2d2ZXJzaW9uZTEuMC4wa3NwZWNWZXJzaW9uZTIuNC4wAAAQOGp1bWIAAAAoanVtZGMyY3MAEQAQgAAAqgA4m3EDYzJwYS5zaWduYXR1cmUAAAAQCGNib3LShFkCEqIBJhghWQIKMIICBjCCAY2gAwIBAgIUQOWgCu7COdC+uIP6BkIFPWdVEwAwCgYIKoZIzj0EAwMwSTEXMBUGA1UEChMOQW50aHJvcGljLCBQQkMxLjAsBgNVBAMTJUFudGhyb3BpYyBDb250ZW50IENyZWRlbnRpYWxzIFJvb3QgQ0EwHhcNMjYwODA3MTg0MzU2WhcNMjgwODA2MTk0MzU2WjBEMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEpMCcGA1UEAxMgQW50aHJvcGljIENsYXVkZSBDb250ZW50IFNpZ25pbmcwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASYegpry1AYBRTVNL1CpTlbROnY3dey+UrsF9C3phYrATN3ZHf93Mo8RQN0KOUuOn19P4oWNFWe5n2/She9N7eTo1gwVjAOBgNVHQ8BAf8EBAMCB4AwFQYDVR0lBA4wDAYKKwYBBAGD6F4CATAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFM5R4gSBTmRbI/jjxM+aPpzB11zCMAoGCCqGSM49BAMDA2cAMGQCMDFzHRSeAXrSy1WOzkbhPZ6Km2wGTmZ/2gK18k8BQGXyqz88Rdrz6CTX9flAnYNVxgIwcF9c3fVhqmJKpi+UhasNUMko69cyX6STPfta3Q8EjyzDjzoyrol46FP6VFHhvUcJoWNwYWRZDZ4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAWfmNhQlgAABZ+anVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAAFlhqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOjcxMjNkODZiLTE5ZjgtNDU3Mi1iMWVmLTM5MzhmNTE2ZmJlNgAAAAOTanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAAAuGp1bWIAAABEanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5pbmdyZWRpZW50LnYzAAAAABhjMnNoLo1l6StU/c4cgzWoon3liwAAAGxjYm9yo2lkYzpmb3JtYXRpaW1hZ2UvcG5namluc3RhbmNlSUR4LHhtcDppaWQ6Y2YzM2M0NzYtNDg3OS00NTI4LWFlNDgtMTRhNmIxZjQ1NzU0bHJlbGF0aW9uc2hpcGhwYXJlbnRPZgAAAeJqdW1iAAAAQWp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuYWN0aW9ucy52MgAAAAAYYzJzaIOyd6hfmmnicu2uL5rdFAkAAAGZY2JvcqJnYWN0aW9uc4KiZmFjdGlvbmtjMnBhLm9wZW5lZGpwYXJhbWV0ZXJzoWtpbmdyZWRpZW50c4GiY3VybHgtc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5pbmdyZWRpZW50LnYzZGhhc2hYIGHJ+qt5KEQFkp8elGWjKQqFEU+ZEbqxLi8VWYRz8hDmpGZhY3Rpb254HWNvbS5hbnRocm9waWMuY2xhdWRlLnByb3ZpZGVkanBhcmFtZXRlcnOheB9jb20uYW50aHJvcGljLm9yaWdpbi1jb25maWRlbmNlZ3Vua25vd25rZGVzY3JpcHRpb254ZkNsYXVkZSBwcm92aWRlZCB0aGlzIGZpbGUgYXQgdGhlIHJlcXVlc3Qgb2YgYSB1c2VyIGFuZCBtYXkgaGF2ZSBjcmVhdGVkIG9yIG1vZGlmaWVkIHRoZSBmaWxlIGNvbnRlbnRzLm1zb2Z0d2FyZUFnZW50oWRuYW1lZkNsYXVkZXJhbGxBY3Rpb25zSW5jbHVkZWT1AAAAyGp1bWIAAABAanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5oYXNoLmRhdGEAAAAAGGMyc2iD3MoRajphy7oVyLNwDLpIAAAAgGNib3KlY2FsZ2ZzaGEyNTZjcGFkTQAAAAAAAAAAAAAAAABkaGFzaFggtMyXxKze4ZhSg9BTlXZwHG57els9yourjqlBcGfIj41kbmFtZW5qdW1iZiBtYW5pZmVzdGpleGNsdXNpb25zgaJlc3RhcnQYIWZsZW5ndGgZFooAAAI+anVtYgAAACdqdW1kYzJjbAARABCAAACqADibcQNjMnBhLmNsYWltLnYyAAAAAg9jYm9ypWNhbGdmc2hhMjU2aXNpZ25hdHVyZXhNc2VsZiNqdW1iZj0vYzJwYS91cm46YzJwYTo3MTIzZDg2Yi0xOWY4LTQ1NzItYjFlZi0zOTM4ZjUxNmZiZTYvYzJwYS5zaWduYXR1cmVqaW5zdGFuY2VJRHgseG1wOmlpZDphNzkyMDUyMi1iZWZiLTRhNzEtODBkMi04MmMwNWRlMjJlZTVyY3JlYXRlZF9hc3NlcnRpb25zg6JjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggYcn6q3koRAWSnx6UZaMpCoURT5kRurEuLxVZhHPyEOaiY3VybHgqc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5hY3Rpb25zLnYyZGhhc2hYICpdtE6+rBhz0b94zAsyvU2k6IqavI85FoeQDQZ17Ju8omN1cmx4KXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaGFzaC5kYXRhZGhhc2hYIP13glzCgd6GuiNXC7DvqlOQ6xPPLDbbbk4x68iB6EqzdGNsYWltX2dlbmVyYXRvcl9pbmZvo2RuYW1lb0FudGhyb3BpYyBGaWxlc2d2ZXJzaW9uZTEuMC4wa3NwZWNWZXJzaW9uZTIuNC4wAAAQOGp1bWIAAAAoanVtZGMyY3MAEQAQgAAAqgA4m3EDYzJwYS5zaWduYXR1cmUAAAAQCGNib3LShFkCEqIBJhghWQIKMIICBjCCAY2gAwIBAgIUQOWgCu7COdC+uIP6BkIFPWdVEwAwCgYIKoZIzj0EAwMwSTEXMBUGA1UEChMOQW50aHJvcGljLCBQQkMxLjAsBgNVBAMTJUFudGhyb3BpYyBDb250ZW50IENyZWRlbnRpYWxzIFJvb3QgQ0EwHhcNMjYwODA3MTg0MzU2WhcNMjgwODA2MTk0MzU2WjBEMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEpMCcGA1UEAxMgQW50aHJvcGljIENsYXVkZSBDb250ZW50IFNpZ25pbmcwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASYegpry1AYBRTVNL1CpTlbROnY3dey+UrsF9C3phYrATN3ZHf93Mo8RQN0KOUuOn19P4oWNFWe5n2/She9N7eTo1gwVjAOBgNVHQ8BAf8EBAMCB4AwFQYDVR0lBA4wDAYKKwYBBAGD6F4CATAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFM5R4gSBTmRbI/jjxM+aPpzB11zCMAoGCCqGSM49BAMDA2cAMGQCMDFzHRSeAXrSy1WOzkbhPZ6Km2wGTmZ/2gK18k8BQGXyqz88Rdrz6CTX9flAnYNVxgIwcF9c3fVhqmJKpi+UhasNUMko69cyX6STPfta3Q8EjyzDjzoyrol46FP6VFHhvUcJoWNwYWRZDZ4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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">
+<title>Iron Plan – 6-day machine program</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef1f6;--sf:#ffffff;--sf2:#e3e8f1;--tx:#0f1729;--mu:#566178;--ln:#d3dae7;
+  --ac:#2f5cff;--on:#ffffff;--acs:#dfe6ff;--gold:#e8a800;--ok:#12805c;--warn:#b4501a;
+  --fig:#0f1729;--mach:#8d99b0;
+  --hd:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --bd:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c1220;--sf:#151d30;--sf2:#1d2740;--tx:#eef2fb;--mu:#9aa6bf;--ln:#27324d;
+    --ac:#7c97ff;--on:#0c1220;--acs:#1f2b52;--gold:#ffc83a;--ok:#3ddba3;--warn:#ff9a62;
+    --fig:#eef2fb;--mach:#5f6d8c;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c1220;--sf:#151d30;--sf2:#1d2740;--tx:#eef2fb;--mu:#9aa6bf;--ln:#27324d;
+  --ac:#7c97ff;--on:#0c1220;--acs:#1f2b52;--gold:#ffc83a;--ok:#3ddba3;--warn:#ff9a62;
+  --fig:#eef2fb;--mach:#5f6d8c;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--tx);font-family:var(--bd);font-size:16px;line-height:1.45;-webkit-text-size-adjust:100%}
+button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+input,select,textarea{font-size:16px}
+.dcr{display:flex;gap:12px;align-items:flex-start;background:var(--sf);border:1px solid var(--ln);border-radius:14px;padding:12px 14px;margin-top:8px}
+.dcr .ic{flex:0 0 28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:15px;color:#fff;background:var(--mach)}
+.dcr.ok .ic{background:var(--ok)}
+.dcr.warn .ic{background:#c98400}
+.dcr.bad .ic{background:#c4381a}
+.dcr small{display:block;color:var(--mu);font-size:14px;margin-top:2px}
+.dcr b{font-size:16px}
+.wrap{max-width:560px;margin:0 auto;padding:16px 16px 140px}
+h1,h2,h3{font-family:var(--hd);margin:0;line-height:1;letter-spacing:.2px}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+
+/* gate */
+.brand{font-family:var(--hd);font-weight:900;font-size:64px;line-height:.9;letter-spacing:1px;margin:18px 0 6px}
+.sub{color:var(--mu);margin:0 0 18px;max-width:34ch}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:0 0 16px}
+.dchip{background:var(--sf);border:1.5px solid var(--ln);border-radius:12px;padding:8px 0 7px;text-align:center;display:flex;flex-direction:column;gap:1px}
+.dchip b{font-family:var(--hd);font-size:20px;font-weight:800}
+.dchip small{font-size:10.5px;color:var(--mu);line-height:1.1}
+.dchip.on{background:var(--ac);border-color:var(--ac);color:var(--on)}
+.dchip.on small{color:var(--on);opacity:.85}
+.dchip.today:not(.on){border-color:var(--ac)}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:18px;padding:16px}
+.card+.card{margin-top:12px}
+.dcard h2{font-size:34px;font-weight:800}
+.dcard p{margin:6px 0 0;color:var(--mu)}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.chip{display:inline-block;background:var(--sf2);border-radius:999px;padding:4px 10px;font-size:13px;font-weight:600}
+.chip.ok{background:var(--acs);color:var(--ac)}
+.chip.late{background:#ffe6d6;color:#9b3d0a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip.late{background:#4a2a18;color:#ffb48a}}
+.code{margin-top:14px}
+.code label{display:block;font-weight:700;margin-bottom:8px}
+.row{display:flex;gap:8px}
+.inp{flex:1;min-width:0;background:var(--bg);border:2px solid var(--ln);border-radius:14px;padding:14px;font:inherit;font-size:20px;font-weight:700;letter-spacing:2px;color:var(--tx);text-transform:uppercase}
+.inp::placeholder{letter-spacing:0;font-weight:500;font-size:16px;text-transform:none;color:var(--mu)}
+.inp.bad{border-color:var(--warn);animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.btn{background:var(--ac);color:var(--on);border:0;border-radius:14px;padding:14px 18px;font-weight:700;font-size:17px}
+.btn.big{width:100%;padding:18px;font-size:19px;border-radius:16px}
+.btn.alt{background:var(--sf2);color:var(--tx)}
+.btn.ok{background:var(--ok);color:#fff}
+.btn:disabled{opacity:.45}
+.ghost{background:transparent;border:1.5px solid var(--ln);border-radius:12px;padding:7px 12px;font-weight:600;font-size:14px}
+.link{background:none;border:0;color:var(--ac);font-weight:600;padding:8px 0;font-size:14px;text-decoration:underline}
+.hint{color:var(--mu);font-size:14px;margin:8px 0 0}
+.err{color:var(--warn);font-size:14px;margin:8px 0 0;min-height:20px}
+
+/* session top */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;align-items:center;gap:10px;padding:10px 16px;max-width:560px;margin:0 auto}
+.tl{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600;font-size:14px}
+.tl b{font-family:var(--hd);font-size:22px;font-weight:800;margin-right:4px}
+.clock{font-family:var(--hd);font-size:28px;font-weight:800;font-variant-numeric:tabular-nums}
+.prog{position:sticky;top:calc(env(safe-area-inset-top,0px) + 52px);z-index:5;height:4px;background:var(--sf2);max-width:560px;margin:0 auto}
+.prog i{display:block;height:100%;background:var(--ac);transition:width .4s}
+.sec{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:6px 0 10px}
+
+/* figure */
+.stage{position:relative;background:var(--sf);border:1px solid var(--ln);border-radius:20px;overflow:hidden}
+.stage svg{display:block;width:100%;height:auto}
+.cap{padding:10px 14px 12px;border-top:1px solid var(--ln);font-weight:600;font-size:15px;min-height:46px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.cap small{color:var(--mu);font-weight:500;font-size:12px;white-space:nowrap}
+.lg{stroke:var(--fig);stroke-width:7;stroke-linecap:round;fill:none}
+.tr{stroke:var(--fig);stroke-width:9;stroke-linecap:round;fill:none}
+.ar{stroke:var(--fig);stroke-width:5.5;stroke-linecap:round;fill:none}
+.l2{stroke:var(--fig);stroke-width:6;stroke-linecap:round;opacity:.38;fill:none}
+.hd{fill:var(--fig)}
+.mf{stroke:var(--mach);stroke-width:4;stroke-linecap:round;fill:none}
+.mp{fill:var(--ac);opacity:.9}
+.padl{stroke:var(--ac);stroke-width:12;stroke-linecap:round;opacity:.9;fill:none}
+.cb{stroke:var(--mu);stroke-width:1.6;fill:none}
+.st{fill:var(--sf2);stroke:var(--mach);stroke-width:2}
+.sl{stroke:var(--mach);stroke-width:1;opacity:.5}
+.bar{fill:var(--gold)}
+.gr{stroke:var(--mach);stroke-width:3;stroke-linecap:round}
+.belt{stroke:var(--mach);stroke-width:5;stroke-dasharray:12 9;stroke-linecap:round}
+.lb{font:600 9.5px var(--bd);fill:var(--mu)}
+
+h2.ex{font-size:40px;font-weight:800;margin:16px 0 4px}
+.mach{color:var(--mu);margin:0 0 8px;font-size:15px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.photo{display:inline-block;color:var(--ac);font-weight:700;text-decoration:underline;font-size:15px;margin:2px 0 6px}
+.alt-line{font-size:14px;color:var(--mu);margin:2px 0 0}
+.setbox{margin-top:12px;display:grid;gap:12px}
+.pills{display:flex;gap:8px}
+.pill{flex:1;text-align:center;border-radius:12px;padding:10px 0;font-family:var(--hd);font-weight:800;font-size:22px;background:var(--sf2);color:var(--mu)}
+.pill.cur{background:var(--ac);color:var(--on)}
+.pill.done{background:var(--ok);color:#fff}
+.target{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.target .big{font-family:var(--hd);font-size:44px;font-weight:800;line-height:1}
+.target span{color:var(--mu);font-size:14px}
+.wt{display:flex;align-items:center;gap:8px}
+.wt button{width:46px;height:46px;border-radius:12px;border:1.5px solid var(--ln);background:var(--sf);font-size:24px;font-weight:700}
+.wt input{width:96px;text-align:center;font:inherit;font-size:22px;font-weight:700;padding:8px;border-radius:12px;border:1.5px solid var(--ln);background:var(--bg);color:var(--tx)}
+.wt small{color:var(--mu)}
+.rest{text-align:center;padding:18px 12px}
+.rest .rb{font-family:var(--hd);font-size:96px;font-weight:900;line-height:1;font-variant-numeric:tabular-nums}
+.rest p{margin:4px 0 0;color:var(--mu)}
+.meter{height:8px;border-radius:99px;background:var(--sf2);overflow:hidden;margin-top:14px}
+.meter i{display:block;height:100%;background:var(--ac);width:0}
+details{background:var(--sf);border:1px solid var(--ln);border-radius:16px;margin-top:10px}
+summary{padding:14px 16px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:22px;color:var(--mu)}
+details[open] summary::after{content:"–"}
+details ol,details ul{margin:0;padding:0 16px 14px 36px}
+details li{margin:0 0 9px}
+details li::marker{font-weight:700;color:var(--ac)}
+.tip{background:var(--acs);border-radius:14px;padding:12px 14px;margin-top:10px;font-size:15px}
+.safe{background:#fff3d6;color:#5b3d00;border-radius:14px;padding:12px 14px;margin-top:12px;font-size:15px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .safe{background:#3a2f12;color:#ffe09a}}
+.tm{text-align:center;padding:16px 12px}
+.tm .tb{font-family:var(--hd);font-size:88px;font-weight:900;line-height:1;font-variant-numeric:tabular-nums}
+.tm .pl{font-weight:700;font-size:18px;margin-top:2px}
+.tm small{color:var(--mu)}
+.tl-list{list-style:none;margin:0;padding:0}
+.tl-list li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--ln);align-items:baseline}
+.tl-list li:last-child{border:0}
+.tl-list .tt{width:44px;font-family:var(--hd);font-weight:800;font-size:20px;color:var(--ac);font-variant-numeric:tabular-nums}
+.tl-list .nm{flex:1}
+.tl-list .nm small{display:block;color:var(--mu)}
+.tl-list .mn{color:var(--mu);font-size:14px;white-space:nowrap}
+.bar-b{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--bg);border-top:1px solid var(--ln);padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px))}
+.bar-b .in{max-width:560px;margin:0 auto;display:flex;gap:8px}
+.bar-b .btn{flex:1}
+.bar-b .btn.alt{flex:0 0 auto}
+.ov{position:fixed;top:0;left:0;right:0;bottom:0;z-index:20;background:rgba(5,10,22,.6);display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:var(--bg);width:100%;max-width:560px;max-height:86%;overflow:auto;border-radius:22px 22px 0 0;padding:16px 16px calc(24px + env(safe-area-inset-bottom,0px))}
+.sheet h3{font-size:30px;font-weight:800;margin-bottom:6px}
+.jump{display:flex;gap:10px;width:100%;text-align:left;background:var(--sf);border:1px solid var(--ln);border-radius:14px;padding:11px 12px;margin-top:8px;align-items:center}
+.jump.cur{border-color:var(--ac);border-width:2px}
+.jump .dot{width:22px;height:22px;border-radius:50%;background:var(--sf2);flex:0 0 22px;display:grid;place-items:center;font-size:13px;font-weight:800}
+.jump.d .dot{background:var(--ok);color:#fff}
+.jump small{color:var(--mu);display:block}
+.fin h2{font-size:56px;font-weight:900}
+.stat{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.stat div{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:14px}
+.stat b{display:block;font-family:var(--hd);font-size:38px;font-weight:800;line-height:1}
+.stat span{color:var(--mu);font-size:14px}
+
+.dchip{position:relative}
+.ck{position:absolute;top:2px;right:4px;font-style:normal;font-size:11px;font-weight:800;color:var(--ok)}
+.dchip.on .ck{color:var(--on)}
+.resume{border:2px solid var(--ac)}
+.resume h3{font-size:28px;font-weight:800;margin-bottom:4px}
+.resume p{margin:0 0 12px;color:var(--mu)}
+.resume p b{color:var(--tx)}
+.svd{font-size:12px;color:var(--ok);font-weight:700;min-width:54px;text-align:right}
+.prow{display:flex;gap:6px;align-items:stretch;margin-top:8px}
+.prow .jump{margin-top:0;flex:1;min-width:0}
+.prow .jump b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mv{flex:0 0 44px;border:1px solid var(--ln);background:var(--sf);border-radius:12px;font-size:15px;font-weight:700}
+.mv.wide{flex:0 0 64px;font-size:14px}
+.jump.sk{opacity:.65}
+.jump.sk .dot{background:var(--mach);color:#fff}
+.opt{display:block;width:100%;text-align:left;background:var(--sf);border:1px solid var(--ln);border-radius:14px;padding:13px 14px;margin-top:8px}
+.opt b{display:block;font-size:16px}
+.opt small{display:block;color:var(--mu);margin-top:2px;font-size:13.5px}
+.toast{position:fixed;left:50%;top:calc(env(safe-area-inset-top,0px) + 70px);transform:translate(-50%,-12px);background:var(--tx);color:var(--bg);padding:10px 16px;border-radius:12px;font-weight:600;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:30;max-width:90%;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+.gymc{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.gymc small{display:block;color:var(--mu);margin-top:2px;font-size:13.5px}
+.gh{font-size:24px;font-weight:800;margin:16px 0 6px}
+.gear{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--sf);border:1.5px solid var(--ln);border-radius:14px;padding:12px 14px;margin-top:6px;font-weight:600}
+.gear .bx{flex:0 0 26px;height:26px;border-radius:8px;border:2px solid var(--ln);display:grid;place-items:center;font-weight:800;color:var(--on)}
+.gear.on{border-color:var(--ac)}
+.gear.on .bx{background:var(--ac);border-color:var(--ac)}
+
+.psec{font-family:var(--hd);font-weight:800;font-size:19px;margin:14px 0 4px;color:var(--mu)}
+.pr2{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--bg);border:1.5px solid var(--ln);border-radius:14px;padding:10px 12px;margin-top:6px}
+.pr2 .bx{flex:0 0 26px;height:26px;border-radius:8px;border:2px solid var(--ln);display:grid;place-items:center;font-weight:800;color:var(--on)}
+.pr2.on{border-color:var(--ac);background:var(--sf)}
+.pr2.on .bx{background:var(--ac);border-color:var(--ac)}
+.pr2 .nm{flex:1;min-width:0;font-weight:600}
+.pr2 small{display:block;color:var(--mu);font-weight:500;font-size:13px}
+.pr2 .tt2{font-family:var(--hd);font-weight:800;font-size:19px;color:var(--ac);font-variant-numeric:tabular-nums}
+.pr2:not(.on) .nm{opacity:.7}
+.pr2.lock{opacity:.65}
+.lbl{display:block;font-weight:700;margin:12px 0 6px}
+.txt{display:block;width:100%;background:var(--bg);border:1.5px solid var(--ln);border-radius:12px;padding:12px;font:inherit;color:var(--tx)}
+textarea.txt{font-size:16px;line-height:1.4;resize:vertical}
+.stack{display:grid;gap:8px;margin-top:12px}
+@media (prefers-reduced-motion:reduce){.inp.bad{animation:none}.prog i{transition:none}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="ov"></div>
+
+<script>
+(function(){
+'use strict';
+var $=function(s){return document.querySelector(s)};
+var ls={
+  get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},
+  set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}},
+  del:function(k){try{localStorage.removeItem(k)}catch(e){}}
+};
+var CODEWORD='LETSGO';
+
+/* ============ ANIMATION ENGINE ============ */
+var f1=function(n){return (+n).toFixed(1)};
+var ease=function(x){return .5-.5*Math.cos(Math.PI*x)};
+var pp=function(ph){return ph<.42?ease(ph/.42):ph<.5?1:ph<.92?1-ease((ph-.5)/.42):0};
+var lerp=function(a,b,t){return a+(b-a)*t};
+function mix(A,B,t){var o={};for(var k in A){var a=A[k],b=B[k]===undefined?a:B[k];o[k]=Array.isArray(a)?[lerp(a[0],b[0],t),lerp(a[1],b[1],t)]:a;}return o}
+var ln=function(a,b,c){return '<line class="'+c+'" x1="'+f1(a[0])+'" y1="'+f1(a[1])+'" x2="'+f1(b[0])+'" y2="'+f1(b[1])+'"/>'};
+var mr=function(a){return [300-a[0],a[1]]};
+function body(p){
+  var s='',sa=p.sa||p.sh;
+  if(p.kn2) s+=ln(p.hip,p.kn2,'l2')+ln(p.kn2,p.ft2,'l2');
+  s+=ln(p.hip,p.kn,'lg')+ln(p.kn,p.ft,'lg');
+  if(p.toe) s+=ln(p.ft,p.toe,'lg');
+  if(p.m) s+=ln(p.hip,mr(p.kn),'lg')+ln(mr(p.kn),mr(p.ft),'lg');
+  if(p.tb) s+='<path class="tr" d="M'+f1(p.sh[0])+' '+f1(p.sh[1])+'Q'+f1(p.tb[0])+' '+f1(p.tb[1])+' '+f1(p.hip[0])+' '+f1(p.hip[1])+'"/>';
+  else s+=ln(p.sh,p.hip,'tr');
+  s+='<circle class="hd" cx="'+f1(p.head[0])+'" cy="'+f1(p.head[1])+'" r="11"/>';
+  s+=ln(sa,p.el,'ar')+ln(p.el,p.ha,'ar');
+  if(p.m){s+=ln(mr(sa),mr(p.el),'ar')+ln(mr(p.el),mr(p.ha),'ar');if(p.sa)s+=ln(sa,mr(sa),'tr');}
+  return s;
+}
+var R=function(x,y,w,h,c,r){return '<rect class="'+(c||'mp')+'" x="'+f1(x)+'" y="'+f1(y)+'" width="'+w+'" height="'+h+'" rx="'+(r===undefined?4:r)+'"/>'};
+var L=function(x1,y1,x2,y2,c){return '<line class="'+(c||'mf')+'" x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(x2)+'" y2="'+f1(y2)+'"/>'};
+var C=function(x,y,r,c){return '<circle class="'+(c||'mp')+'" cx="'+f1(x)+'" cy="'+f1(y)+'" r="'+r+'"/>'};
+function STK(x,y,w,h){var s=R(x,y,w,h,'st',3);for(var i=1;i<h/10;i++)s+=L(x+2,y+i*10,x+w-2,y+i*10,'sl');return s}
+var P=function(head,sh,hip,el,ha,kn,ft,x){var o={head:head,sh:sh,hip:hip,el:el,ha:ha,kn:kn,ft:ft};if(x)for(var k in x)o[k]=x[k];return o};
+var MAT=R(30,172,240,5,'st',2);
+
+var BONES=[['hip','sh'],['sh','head'],['sh','el'],['el','ha'],['hip','kn'],['kn','ft'],['hip','kn2'],['kn2','ft2'],['ft','toe']];
+function parentOf(pk,ck,p){return (ck==='el'&&p.sa)?'sa':pk}
+function prep(c){
+  if(c.fn||c.len)return;
+  c.len={};
+  BONES.forEach(function(b){
+    var par=parentOf(b[0],b[1],c.a),ck=b[1];
+    if(c.a[par]&&c.a[ck]&&c.b[par]&&c.b[ck]){
+      var d=function(Q){return Math.hypot(Q[ck][0]-Q[par][0],Q[ck][1]-Q[par][1])};
+      c.len[ck]=[d(c.a),d(c.b)];
+    }
+  });
+}
+function fixPose(p,c,t){
+  BONES.forEach(function(b){
+    var ck=b[1],par=parentOf(b[0],ck,p),Ls=c.len[ck];
+    if(!Ls||!p[par]||!p[ck])return;
+    if(c.pin&&c.pin.indexOf(ck)>=0)return;
+    var Lx=lerp(Ls[0],Ls[1],t),dx=p[ck][0]-p[par][0],dy=p[ck][1]-p[par][1],d=Math.hypot(dx,dy)||1;
+    p[ck]=[p[par][0]+dx/d*Lx,p[par][1]+dy/d*Lx];
+  });
+}
+
+/* custom: walking */
+function gait(t,T){
+  var w=2*Math.PI*t/T,hip=[150,84];
+  function leg(ph){
+    var a=.55*Math.sin(w+ph),bend=.8*Math.max(0,Math.cos(w+ph));
+    var kn=[hip[0]+44*Math.sin(a),hip[1]+44*Math.cos(a)],b=a-bend;
+    return [kn,[kn[0]+44*Math.sin(b),kn[1]+44*Math.cos(b)]];
+  }
+  var l1=leg(0),l2=leg(Math.PI),sh=[155,34],c=-.55*Math.sin(w);
+  var el=[sh[0]+26*Math.sin(c),sh[1]+26*Math.cos(c)];
+  var ha=[el[0]+26*Math.sin(c+1.1),el[1]+26*Math.cos(c+1.1)];
+  return {head:[159,17],sh:sh,hip:hip,el:el,ha:ha,kn:l1[0],ft:l1[1],kn2:l2[0],ft2:l2[1]};
+}
+function ik(a,b,l1,l2,s){
+  var dx=b[0]-a[0],dy=b[1]-a[1],d=Math.hypot(dx,dy)||1;d=Math.min(d,l1+l2-.01);
+  var h=Math.sqrt(Math.max(0,l1*l1-(d/2)*(d/2))),mx=a[0]+dx/2,my=a[1]+dy/2;
+  var nx=-dy/(Math.hypot(dx,dy)||1)*s,ny=dx/(Math.hypot(dx,dy)||1)*s;
+  return [mx+nx*h,my+ny*h];
+}
+function pedal(t,T){
+  var th=2*Math.PI*t/T,cx=146,cy=140,r=17;
+  var p1=[cx+r*Math.cos(th),cy+r*Math.sin(th)],p2=[cx+r*Math.cos(th+Math.PI),cy+r*Math.sin(th+Math.PI)];
+  var hip=[112,92],sh=[138,44],ha=[182,70];
+  return {head:[146,28],sh:sh,hip:hip,el:ik(sh,ha,28,28,1),ha:ha,kn:ik(hip,p1,45,45,-1),ft:p1,kn2:ik(hip,p2,45,45,-1),ft2:p2,p1:p1,p2:p2};
+}
+
+var A={};
+var BELT=function(t){return '<line class="belt" x1="52" y1="174" x2="250" y2="174" style="stroke-dashoffset:'+f1(-(t*70)%21)+'"/>'};
+A.treadmill={T:1.2,incl:0,fn:function(t,c){return gait(t,c.T)},cue:['Tall posture, relaxed arms, natural steps',''],
+  m:function(p,t){return {b:R(50,176,206,8,'st',3)+L(256,176,264,66)+R(240,52,48,16,'mp')+L(264,100,214,100),f:BELT(t)}},
+  lab:[['Console',264,46,'middle'],['Handrail',226,94,'middle'],['Belt',110,189,'middle']]};
+A.incline={T:1.35,incl:8,fn:function(t,c){return gait(t,c.T)},cue:['Lean slightly from the ankles, do not hold the rails',''],
+  m:A.treadmill.m,lab:[['Console',270,30,'middle'],['Incline 8–10%',110,189,'middle']]};
+A.bike={T:1.5,fn:function(t,c){return pedal(t,c.T)},cue:['Smooth circles, relaxed shoulders',''],
+  m:function(p){return {b:C(182,152,22,'st')+L(146,140,108,100)+L(146,140,182,74)+L(182,74,192,66)+R(96,98,32,7,'mp',3),
+    f:L(146,140,p.p1[0],p.p1[1])+L(146,140,p.p2[0],p.p2[1])+R(p.p1[0]-7,p.p1[1]-2,14,5,'bar',2)+R(p.p2[0]-7,p.p2[1]-2,14,5,'bar',2)}},
+  lab:[['Seat',100,90,'middle'],['Handlebar',200,58,'middle'],['Flywheel',210,184,'middle']]};
+
+A.pulldown={T:4.4,cue:['Pull elbows down: bar to upper chest','Return slowly until arms are long'],
+  a:P([104,62],[108,84],[118,138],[116,58],[124,32],[166,128],[168,170]),
+  b:P([104,62],[108,84],[118,138],[108,110],[134,94],[166,128],[168,170]),
+  m:function(p){return {b:L(205,14,205,172)+L(205,14,150,14)+C(150,14,6,'st')+STK(214,56,26,116)+R(98,140,58,10)+L(150,14,p.ha[0],p.ha[1],'cb'),
+    f:R(138,112,42,9)+R(p.ha[0]-14,p.ha[1]-3,28,6,'bar',3)}},
+  lab:[['Weight stack',227,50,'middle'],['Thigh pad',160,106,'middle'],['Seat',126,164,'middle'],['Bar',50,28,'middle']]};
+A.seatedrow={T:4.4,cue:['Pull handle to lower ribs, squeeze','Let arms extend slowly'],
+  a:P([100,66],[92,84],[78,138],[122,92],[152,98],[122,124],[156,150]),
+  b:P([86,64],[82,82],[78,138],[60,100],[94,108],[122,124],[156,150]),
+  m:function(p){return {b:L(56,158,262,158)+R(56,140,44,10)+L(164,120,164,160)+L(268,100,268,172)+STK(272,96,22,76)+C(256,126,7,'st')+L(p.ha[0],p.ha[1],256,126,'cb'),
+    f:R(p.ha[0]-7,p.ha[1]-3,14,6,'bar',3)}},
+  lab:[['Foot plate',176,112,'start'],['Seat pad',50,136,'end'],['V-handle',160,76,'middle'],['Low pulley',262,92,'end']]};
+A.chestrow={T:4.4,cue:['Pull elbows back, chest stays on the pad','Slow return, feel the stretch'],
+  a:P([110,70],[100,88],[78,138],[128,100],[156,112],[120,128],[122,168]),
+  b:P([110,70],[100,88],[78,138],[82,106],[108,114],[120,128],[122,168]),
+  m:function(p){return {b:R(56,140,42,10)+R(106,82,10,46)+L(111,128,111,172)+L(p.ha[0],p.ha[1],190,112)+C(190,112,6,'st')+L(190,112,190,172),
+    f:R(p.ha[0]-7,p.ha[1]-3,14,6,'bar',3)}},
+  lab:[['Chest pad',126,76,'start'],['Handles',172,106,'start'],['Seat',64,164,'middle']]};
+A.facepull={T:4,cue:['Pull rope to forehead, elbows high and out','Return slowly'],
+  a:P([104,30],[100,48],[100,100],[128,52],[156,50],[102,136],[102,170],{kn2:[98,136],ft2:[96,170]}),
+  b:P([104,30],[100,48],[100,100],[122,54],[112,34],[102,136],[102,170],{kn2:[98,136],ft2:[96,170]}),
+  m:function(p){return {b:L(200,10,200,172)+C(190,50,6,'st')+STK(208,56,26,116)+L(p.ha[0],p.ha[1],190,50,'cb'),f:R(p.ha[0]-7,p.ha[1]-3,14,6,'bar',3)}},
+  lab:[['Pulley at face height',196,38,'end'],['Rope',152,66,'middle']]};
+A.backext={T:4.6,cue:['Rise until your body is one straight line','Lower slowly, spine long'],
+  a:P([109,154],[119,140],[150,98],[128,146],[138,138],[182,130],[214,162]),
+  b:P([101,49],[113,61],[150,98],[122,70],[130,62],[182,130],[214,162]),
+  m:function(){return {b:L(138,97,190,149,'padl')+L(168,126,146,172)+L(196,150,222,172),f:C(206,152,7,'mp')}},
+  lab:[['Hip pad',86,104,'middle'],['Ankle roller',236,148,'middle']]};
+A.crunch={T:4,cue:['Curl ribs toward hips and breathe out','Return slowly, do not drop the weight'],
+  a:P([100,62],[100,84],[112,138],[120,100],[134,86],[154,132],[156,170]),
+  b:P([134,100],[128,108],[112,138],[138,124],[150,108],[154,132],[156,170]),
+  m:function(p){return {b:R(88,66,10,72)+R(96,140,50,9)+STK(214,60,26,112)+L(p.ha[0]+10,p.ha[1],214,100,'cb'),f:R(p.ha[0],p.ha[1]-20,10,40,'mp')}},
+  lab:[['Back pad',84,104,'end'],['Chest pad',160,58,'middle'],['Weight stack',227,54,'middle']]};
+A.reardelt={T:4,cue:['Open arms back and squeeze shoulder blades','Return slowly'],
+  a:P([150,38],[150,62],[150,118],[158,74],[158,48],[172,130],[178,170],{m:true,sa:[170,66]}),
+  b:P([150,38],[150,62],[150,118],[208,70],[212,44],[172,130],[178,170],{m:true,sa:[170,66]}),
+  m:function(p){return {b:R(134,56,32,66,'st',6)+R(126,120,48,9),f:R(p.el[0]-6,p.el[1]-32,12,40,'mp')+R(300-p.el[0]-6,p.el[1]-32,12,40,'mp')}},
+  lab:[['Arm pads',246,52,'middle'],['Seat',150,185,'middle']]};
+A.pecdeck={T:4,cue:['Bring arms together in front of your chest','Open slowly to shoulder line'],
+  a:P([150,38],[150,62],[150,118],[208,70],[212,44],[172,130],[178,170],{m:true,sa:[170,66]}),
+  b:P([150,38],[150,62],[150,118],[158,74],[158,48],[172,130],[178,170],{m:true,sa:[170,66]}),
+  m:A.reardelt.m,lab:[['Arm pads',246,52,'middle'],['Seat',150,185,'middle']]};
+A.lateral={T:4,cue:['Raise elbows to shoulder height, no higher','Lower slowly'],
+  a:P([150,38],[150,62],[150,118],[180,90],[184,114],[172,130],[178,170],{m:true,sa:[170,66]}),
+  b:P([150,38],[150,62],[150,118],[200,66],[228,70],[172,130],[178,170],{m:true,sa:[170,66]}),
+  m:function(p){return {b:R(134,56,32,66,'st',6)+R(126,120,48,9),f:C(p.el[0],p.el[1]+4,9,'mp')+C(300-p.el[0],p.el[1]+4,9,'mp')}},
+  lab:[['Elbow pads',250,84,'middle'],['Seat',150,185,'middle']]};
+A.chestpress={T:4.4,cue:['Press handles forward, stop before locking','Return slowly, elbows level with chest'],
+  a:P([90,64],[90,84],[90,138],[70,98],[98,92],[134,132],[138,170]),
+  b:P([90,64],[90,84],[90,138],[118,88],[146,90],[134,132],[138,170]),
+  m:function(p){return {b:R(72,70,12,76)+R(76,140,52,10)+L(p.ha[0],p.ha[1],200,96)+C(200,96,6,'st')+L(200,96,200,172)+STK(212,70,26,102),f:C(p.ha[0],p.ha[1],5,'bar')}},
+  lab:[['Back pad',66,66,'end'],['Handles',152,80,'middle'],['Seat',100,164,'middle'],['Weight stack',225,64,'middle']]};
+A.shoulderpress={T:4.4,cue:['Press straight up, ribs down','Lower to ear level'],
+  a:P([90,66],[90,86],[90,138],[106,110],[110,84],[134,132],[138,170]),
+  b:P([90,66],[90,86],[90,138],[106,60],[104,34],[134,132],[138,170]),
+  m:function(p){return {b:R(72,72,12,76)+R(76,140,52,10)+L(p.ha[0],p.ha[1],176,50)+C(176,50,6,'st')+L(176,50,176,172)+STK(188,60,26,112),f:C(p.ha[0],p.ha[1],5,'bar')}},
+  lab:[['Back pad',66,72,'end'],['Handles',140,22,'middle'],['Seat',100,164,'middle']]};
+A.pushdown={T:4,cue:['Press down, elbows pinned to your ribs','Return to chest height'],
+  a:P([102,30],[100,48],[100,100],[110,78],[140,70],[102,136],[102,170],{kn2:[98,136],ft2:[98,170]}),
+  b:P([102,30],[100,48],[100,100],[108,80],[112,110],[102,136],[102,170],{kn2:[98,136],ft2:[98,170]}),
+  m:function(p){return {b:L(196,10,196,172)+L(196,14,150,14)+C(150,14,6,'st')+STK(204,52,26,120)+L(150,14,p.ha[0],p.ha[1],'cb'),f:R(p.ha[0]-9,p.ha[1]-3,18,6,'bar',3)}},
+  lab:[['High pulley',130,8,'middle'],['Rope or bar',172,64,'start']]};
+A.curl={T:4,cue:['Curl handles up to your shoulders','Lower slowly to nearly straight'],
+  a:P([95,62],[92,82],[90,138],[112,106],[136,128],[134,132],[138,170]),
+  b:P([95,62],[92,82],[90,138],[112,106],[122,80],[134,132],[138,170]),
+  m:function(p){return {b:L(98,94,126,126,'padl')+R(72,140,52,10),f:C(p.ha[0],p.ha[1],5,'bar')}},
+  lab:[['Arm pad',150,100,'start'],['Handle',172,134,'start'],['Seat',100,164,'middle']]};
+A.assistedpull={T:4.6,cue:['Pull chest toward the bar','Lower slowly, arms straight'],
+  a:P([150,46],[150,64],[148,116],[157,40],[162,16],[150,152],[112,156]),
+  b:P([150,22],[150,40],[148,92],[172,34],[162,16],[150,128],[112,132]),
+  m:function(p){return {b:L(206,10,206,172)+L(206,10,130,10)+STK(214,60,26,112)+R(140,13,44,6,'bar',3),f:L(86,p.kn[1]+8,176,p.kn[1]+8,'padl')+L(176,p.kn[1]+8,206,p.kn[1]+8,'cb')}},
+  lab:[['Grip bar',162,6,'middle'],['Knee platform',44,150,'start'],['Weight stack',227,54,'middle']]};
+A.legpress={T:4.6,pin:['kn','ft'],cue:['Push the platform away, do not lock knees','Bend knees slowly toward your chest'],
+  a:P([40,92],[52,106],[80,140],[64,124],[80,130],[97,98],[130,128]),
+  b:P([40,92],[52,106],[80,140],[64,124],[80,130],[115,116],[156,102]),
+  m:function(p){var cx=p.ft[0]+4,cy=p.ft[1]-4;return {b:L(45,112,73,146,'padl')+R(72,142,34,8)+L(86,172,200,58),f:L(cx-12,cy-12,cx+12,cy+12,'padl')}},
+  lab:[['Seat and back pad',50,170,'start'],['Foot platform',200,100,'start'],['Sled rail',212,58,'start']]};
+A.legcurl={T:4.4,cue:['Curl heels down toward your glutes','Return slowly'],
+  a:P([78,58],[80,76],[82,130],[98,104],[120,112],[130,124],[176,130]),
+  b:P([78,58],[80,76],[82,130],[98,104],[120,112],[130,124],[128,168]),
+  m:function(p){return {b:R(62,60,11,74)+R(64,134,72,9)+STK(214,60,26,112),f:R(104,108,30,9)+L(p.ft[0],p.ft[1],142,142)+C(p.ft[0],p.ft[1],8,'mp')}},
+  lab:[['Thigh pad',142,100,'start'],['Ankle roller',192,118,'start'],['Back pad',58,72,'end']]};
+A.legext={T:4.4,cue:['Extend legs fully, squeeze your thighs','Lower slowly'],
+  a:P([78,58],[80,76],[82,130],[98,104],[120,112],[130,124],[128,168]),
+  b:P([78,58],[80,76],[82,130],[98,104],[120,112],[130,124],[176,130]),
+  m:A.legcurl.m,lab:[['Thigh pad',142,100,'start'],['Roller (lower shin)',192,118,'start'],['Back pad',58,72,'end']]};
+A.hipthrust={T:4.6,pin:['ft'],cue:['Drive hips up, squeeze glutes hard','Lower under control'],
+  a:P([47,112],[65,122],[105,152],[85,138],[104,146],[146,122],[156,168]),
+  b:P([45,112],[63,122],[112,124],[90,124],[112,118],[158,120],[156,168]),
+  m:function(p){return {b:R(24,114,48,16)+L(36,130,36,172)+L(66,130,66,172),f:R(p.hip[0]-15,p.hip[1]-16,30,11,'mp',5)+L(p.hip[0]+8,p.hip[1]-14,206,150)+C(206,150,6,'st')}},
+  lab:[['Back pad',48,92,'middle'],['Hip pad',114,92,'middle'],['Lever arm',212,140,'middle']]};
+A.kickback={T:4.2,cue:['Push the leg straight back, squeeze the glute','Return slowly'],
+  a:P([158,24],[150,40],[120,90],[162,62],[170,82],[138,128],[138,168],{kn2:[122,130],ft2:[122,168]}),
+  b:P([158,24],[150,40],[120,90],[162,62],[170,82],[100,125],[66,148],{kn2:[122,130],ft2:[122,168]}),
+  m:function(p){return {b:R(164,28,10,56)+L(176,28,176,172)+L(60,172,190,172),f:C(170,84,5,'bar')+L(p.ft[0],p.ft[1],168,150,'cb')+C(p.ft[0],p.ft[1],7,'mp')}},
+  lab:[['Chest pad',200,40,'start'],['Foot pad',60,134,'middle'],['Handle',196,90,'start']]};
+A.abduction={T:4.4,cue:['Push knees out, squeeze outer glutes','Return slowly'],
+  a:P([150,38],[150,62],[150,118],[176,92],[172,114],[160,128],[160,168],{m:true,sa:[170,66]}),
+  b:P([150,38],[150,62],[150,118],[176,92],[172,114],[196,128],[204,168],{m:true,sa:[170,66]}),
+  m:function(p){return {b:R(130,58,40,64,'st',6)+R(124,120,52,10),f:R(p.kn[0]+5,p.kn[1]-18,10,38)+R(300-p.kn[0]-15,p.kn[1]-18,10,38)}},
+  lab:[['Knee pads',256,110,'middle'],['Seat',150,185,'middle']]};
+A.adduction={T:4.4,cue:['Squeeze knees together','Open slowly'],
+  a:P([150,38],[150,62],[150,118],[176,92],[172,114],[196,128],[204,168],{m:true,sa:[170,66]}),
+  b:P([150,38],[150,62],[150,118],[176,92],[172,114],[160,128],[160,168],{m:true,sa:[170,66]}),
+  m:function(p){return {b:R(130,58,40,64,'st',6)+R(124,120,52,10),f:R(p.kn[0]-15,p.kn[1]-18,10,38)+R(300-p.kn[0]+5,p.kn[1]-18,10,38)}},
+  lab:[['Knee pads (inside)',70,108,'middle'],['Seat',150,185,'middle']]};
+A.calf={T:3.4,pin:['toe'],cue:['Rise as high as you can on your toes','Lower heels for a deep stretch'],
+  a:P([88,54],[86,72],[88,128],[104,100],[126,108],[136,120],[140,164],{toe:[164,168]}),
+  b:P([88,54],[86,72],[88,128],[104,100],[126,108],[136,112],[140,156],{toe:[164,168]}),
+  m:function(p){return {b:R(66,132,56,9)+R(68,60,10,72),f:R(p.kn[0]-16,p.kn[1]-18,36,10)+L(128,171,178,171)}},
+  lab:[['Knee pad',176,90,'middle'],['Foot platform',200,160,'start']]};
+A.rower={T:3.6,pin:['ft'],cue:['Legs push, lean back, then pull handle to ribs','Arms, body, then legs return forward'],
+  a:P([194,74],[186,92],[166,140],[210,92],[236,96],[197,107],[202,152]),
+  b:P([86,84],[100,100],[118,140],[94,126],[124,118],[160,144],[202,152]),
+  m:function(p){return {b:L(60,158,226,158)+R(p.hip[0]-16,p.hip[1]+3,32,7)+L(206,112,210,162)+C(256,138,26,'st')+L(p.ha[0],p.ha[1],246,136,'cb'),f:R(p.ha[0]-7,p.ha[1]-3,14,6,'bar',3)}},
+  lab:[['Flywheel',256,186,'middle'],['Foot plate',204,186,'end'],['Handle',214,70,'middle'],['Sliding seat',26,146,'start']]};
+
+A.smiththrust={T:4.6,pin:['ft'],cue:['Drive hips up, squeeze glutes hard','Lower under control'],
+  a:A.hipthrust.a,b:A.hipthrust.b,
+  m:function(p){return {b:R(24,114,48,16)+L(36,130,36,172)+L(66,130,66,172)+L(108,36,108,172),f:C(108,p.hip[1]-15,8,'bar')+R(100,p.hip[1]-12,16,7,'mp',3)}},
+  lab:[['Bench',48,96,'middle'],['Smith rail',108,30,'middle'],['Bar with pad',168,100,'start']]};
+A.cablekick={T:4.2,cue:['Push the leg straight back, squeeze the glute','Return slowly'],
+  a:P([158,24],[150,40],[120,90],[162,62],[170,82],[138,128],[138,168],{kn2:[122,130],ft2:[122,168]}),
+  b:P([158,24],[150,40],[120,90],[162,62],[170,82],[100,125],[66,148],{kn2:[122,130],ft2:[122,168]}),
+  m:function(p){return {b:L(176,36,176,172)+C(176,156,6,'st')+STK(186,60,26,112),f:C(170,84,5,'bar')+L(p.ft[0],p.ft[1],176,156,'cb')+C(p.ft[0],p.ft[1],5,'mp')}},
+  lab:[['Cable tower',230,56,'middle'],['Ankle strap',40,162,'middle'],['Low pulley',176,186,'middle']]};
+A.cableabd={T:4.4,cue:['Lift the leg out to the side, squeeze the outer glute','Return slowly'],
+  a:P([150,17],[150,34],[150,84],[126,56],[100,70],[156,128],[156,172],{kn2:[146,128],ft2:[146,172]}),
+  b:P([150,17],[150,34],[150,84],[126,56],[100,70],[176,122],[200,158],{kn2:[146,128],ft2:[146,172]}),
+  m:function(p){return {b:L(96,30,96,172)+C(96,158,6,'st')+STK(62,56,26,116),f:L(96,158,p.ft[0],p.ft[1],'cb')+C(p.ft[0],p.ft[1],5,'mp')}},
+  lab:[['Cable tower',50,48,'middle'],['Low pulley',96,184,'middle'],['Ankle strap',226,150,'middle']]};
+A.cableadd={T:4.4,cue:['Pull the leg across in front of your standing leg','Return slowly'],
+  a:P([150,17],[150,34],[150,84],[172,58],[198,72],[176,122],[200,158],{kn2:[146,128],ft2:[146,172]}),
+  b:P([150,17],[150,34],[150,84],[172,58],[198,72],[142,128],[134,170],{kn2:[146,128],ft2:[146,172]}),
+  m:function(p){return {b:L(204,30,204,172)+C(204,158,6,'st')+STK(212,56,26,116),f:L(204,158,p.ft[0],p.ft[1],'cb')+C(p.ft[0],p.ft[1],5,'mp')}},
+  lab:[['Cable tower',240,48,'middle'],['Low pulley',204,184,'middle'],['Ankle strap',90,150,'middle']]};
+A.cablepull={T:4.4,cue:['Pull the elbow down to your hip, squeeze the lat','Return slowly until the arm is long'],
+  a:P([102,30],[100,48],[100,100],[116,30],[128,12],[102,136],[102,170],{kn2:[98,136],ft2:[98,170]}),
+  b:P([102,30],[100,48],[100,100],[108,76],[124,62],[102,136],[102,170],{kn2:[98,136],ft2:[98,170]}),
+  m:A.pushdown.m,lab:[['High pulley',150,8,'middle'],['D-handle',176,70,'start']]};
+A.birddog={T:7,cue:['Reach opposite arm and leg out, hips level','Return slowly and switch sides'],
+  a:P([62,106],[86,114],[176,120],[87,140],[88,166],[178,166],[222,168],{kn2:[178,166],ft2:[222,168]}),
+  b:P([62,106],[86,114],[176,120],[58,112],[30,110],[216,118],[256,116],{kn2:[178,166],ft2:[222,168]}),
+  m:function(){return {b:MAT,f:''}},lab:[]};
+
+/* stretches */
+A.child={T:6,cue:['Breathe out and sink your hips back','Breathe in and relax'],
+  a:P([150,114],[132,128],[92,148],[165,132],[196,150],[130,158],[86,166]),
+  b:P([160,160],[142,150],[92,148],[176,160],[208,166],[130,158],[86,166]),
+  m:function(){return {b:MAT,f:''}},lab:[]};
+A.catcow={T:6,cue:['Cow: belly drops, look up (breathe in)','Cat: round your back, chin tucks (breathe out)'],
+  a:P([62,102],[86,112],[176,120],[87,140],[88,166],[178,166],[222,168],{tb:[131,140]}),
+  b:P([64,126],[86,112],[176,120],[87,140],[88,166],[178,166],[222,168],{tb:[131,86]}),
+  m:function(){return {b:MAT,f:''}},lab:[]};
+A.kneechest={T:6,cue:['Pull one knee gently toward your chest','Release and let the back flatten'],
+  a:P([46,160],[64,160],[130,160],[96,148],[120,152],[170,126],[180,160],{kn2:[172,160],ft2:[214,162]}),
+  b:P([46,160],[64,160],[130,160],[86,140],[104,130],[100,130],[134,138],{kn2:[172,160],ft2:[214,162]}),
+  m:function(){return {b:MAT,f:''}},lab:[]};
+A.hipflexor={T:6,cue:['Tuck your tailbone and shift hips forward','Ease back a little'],
+  a:P([118,48],[118,66],[120,118],[138,96],[158,108],[110,160],[64,164],{kn2:[162,116],ft2:[164,166]}),
+  b:P([134,52],[132,70],[132,122],[150,98],[168,110],[112,160],[66,164],{kn2:[168,118],ft2:[166,166]}),
+  m:function(){return {b:MAT,f:''}},lab:[]};
+A.quad={T:6,cue:['Pull heel toward glute, knees together','Relax and breathe'],
+  a:P([122,17],[120,34],[120,84],[142,54],[166,50],[124,126],[92,108],{kn2:[122,128],ft2:[122,172]}),
+  b:P([124,17],[122,34],[122,84],[142,54],[166,50],[126,126],[106,86],{kn2:[124,128],ft2:[124,172]}),
+  m:function(){return {b:L(176,14,176,172)+MAT,f:''}},lab:[['Wall',176,8,'middle']]};
+A.chestdoor={T:6,cue:['Step through gently until the chest opens','Ease back slightly'],
+  a:P([128,17],[128,34],[124,84],[156,50],[156,24],[130,126],[138,172],{kn2:[118,126],ft2:[106,172]}),
+  b:P([142,20],[140,36],[134,86],[158,52],[158,26],[142,128],[152,172],{kn2:[126,128],ft2:[112,172]}),
+  m:function(){return {b:L(164,10,164,172)+MAT,f:''}},lab:[['Door frame',164,6,'middle']]};
+
+var animCur=null,animKey='',paused=false,raf=0,lastCue='',lastBase='';
+function mountAnim(key){
+  animKey=key;animCur=key?A[key]:null;lastCue='';
+  if(animCur){prep(animCur);}
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)paused=true;
+  if(!raf)raf=requestAnimationFrame(loop);
+}
+function frame(c,t){
+  var p,ph=0,pv=0;
+  if(c.fn){p=c.fn(t,c);}
+  else{ph=(t%c.T)/c.T;pv=pp(ph);p=mix(c.a,c.b,pv);fixPose(p,c,pv);}
+  var mm=c.m?c.m(p,t):{b:'',f:''};
+  return {p:p,ph:ph,b:mm.b,f:mm.f,body:body(p)};
+}
+function loop(now){
+  raf=requestAnimationFrame(loop);
+  var g=document.getElementById('fig');
+  if(!g||!animCur||paused)return;
+  var r=frame(animCur,now/1000);
+  document.getElementById('back').innerHTML=r.b;
+  g.innerHTML=r.body;
+  document.getElementById('front').innerHTML=r.f;
+  var cue=animCur.cue?(animCur.fn?animCur.cue[0]:(r.ph<.5?animCur.cue[0]:animCur.cue[1])):'';
+  if(cue!==lastCue){lastCue=cue;var cp=document.getElementById('cue');if(cp)cp.textContent=cue;}
+}
+function figureHTML(key,note){
+  var c=A[key];if(!c)return '';
+  var labs=(c.lab||[]).map(function(l){return '<text class="lb" x="'+l[1]+'" y="'+l[2]+'" text-anchor="'+(l[3]||'middle')+'">'+l[0]+'</text>'}).join('');
+  var tf=c.incl?' transform="rotate(-'+c.incl+' 150 172)"':'';
+  return '<div class="stage" data-act="anim"><svg viewBox="0 0 300 190" role="img" aria-label="Animated machine diagram">'+
+    '<line class="gr" x1="10" y1="172" x2="290" y2="172"/>'+
+    '<g'+tf+'><g id="back"></g><g id="fig"></g><g id="front"></g></g>'+
+    '<g>'+labs+'</g></svg>'+
+    '<div class="cap"><span id="cue"></span><small>tap to pause</small></div></div>';
+}
+
+/* ============ CONTENT ============ */
+var E={};
+E.pulldown={id:'pulldown',kind:'ex',name:'Lat pulldown',machine:'Tall station with a seat, thigh pads and a long bar hanging from a cable overhead',muscle:'Lats and upper back: back width',anim:'pulldown',sets:3,reps:'10–12',rest:75,mins:9,tempo:'2 s pull, 1 s squeeze, 3 s return',
+ setup:['Push the pin into the weight stack at a light weight. It should feel easy for the first few reps.','Loosen the knob on the thigh pad, slide it down until it presses firmly on top of your thighs, then tighten. Your legs must not lift when you pull.','Stand up, reach for the bar with an overhand grip a little wider than your shoulders. Wrap your thumbs around the bar.','Sit down holding the bar. Feet flat, thighs under the pad, lean back about 10 degrees and lift your chest.'],
+ how:['Start with arms long and shoulders relaxed, away from your ears.','Pull the bar down to your upper chest by driving your elbows down and back, toward your back pockets.','Squeeze your shoulder blades for 1 second.','Let the bar rise slowly (3 seconds) until your arms are straight again.'],
+ avoid:['Swinging your torso back to yank the bar.','Pulling the bar behind your neck.','Shrugging shoulders up as you pull.'],
+ tip:'Think “elbows to hips”, not “hands to chest”. Your back does the work, not your arms.',
+ alt:'Assisted pull-up machine',q:'lat pulldown machine'};
+E.pulldown2=Object.assign({},E.pulldown,{id:'pulldown2',name:'Lat pulldown: close neutral grip',muscle:'Lower lats and mid back',reps:'10–12',
+ setup:E.pulldown.setup.map(function(s,i){return i===2?'Swap the wide bar for the V-handle (close neutral grip, palms facing each other). Clip it to the cable hook, then stand and take it.':s}),
+ tip:'The V-handle lets your elbows travel closer to your body, which hits the lower lats. Same form, same slow tempo.'});
+E.seatedrow={id:'seatedrow',kind:'ex',name:'Seated cable row',machine:'Low pulley with a V-handle, foot plates and a seat. You pull the handle toward your stomach',muscle:'Mid back and lats: back thickness',anim:'seatedrow',sets:3,reps:'10–12',rest:75,mins:9,tempo:'1 s pull, 1 s squeeze, 3 s return',
+ setup:['Pin a light weight in the stack.','Sit, feet flat on the foot plates, knees slightly bent (never locked).','Lean forward, grab the V-handle with palms facing each other, then sit tall: chest up, natural curve in your lower back.'],
+ how:['Start with arms straight and shoulders relaxed.','Pull the handle to your lower ribs, elbows skimming your sides.','Squeeze your shoulder blades together for 1 second.','Return slowly until your arms are straight. You should feel a stretch across your back, not a collapse.'],
+ avoid:['Rocking your torso back and forth.','Shrugging shoulders up to your ears.','Rounding your lower back at the stretch.'],
+ tip:'Imagine pinching a pencil between your shoulder blades at the squeeze.',
+ alt:'Machine low row (iso-lateral row)',q:'seated cable row machine'};
+E.chestrow={id:'chestrow',kind:'ex',name:'Chest-supported row machine',machine:'Row machine with a padded chest plate and two handles at the front',muscle:'Mid back and rear shoulders: thickness',anim:'chestrow',sets:3,reps:'10–12',rest:75,mins:9,tempo:'1 s pull, 1 s squeeze, 3 s return',
+ setup:['Pin a light weight.','Set the seat height so the chest pad touches the middle of your chest (breastbone) while you can reach the handles with straight arms.','Sit with your chest and stomach firmly on the pad. Grip the handles, palms facing each other.'],
+ how:['Pull your elbows back and slightly out, like closing a drawer behind you.','Chest stays glued to the pad the whole time.','Squeeze for 1 second.','Return slowly for 3 seconds.'],
+ avoid:['Lifting your chest off the pad to cheat.','Shrugging shoulders.','Jerking the weight.'],
+ tip:'The pad supports your spine, so this is a safe, powerful move while your lower back is getting stronger.',
+ alt:'T-bar row with chest support, or Seated cable row',q:'chest supported row machine'};
+E.facepull={id:'facepull',kind:'ex',name:'Cable face pull',machine:'Cable tower (dual pulley) with a rope attachment clipped on',muscle:'Rear shoulders and upper back: posture',anim:'facepull',sets:3,reps:'15',rest:60,mins:7,tempo:'2 s pull, 1 s squeeze, 3 s return',
+ setup:['Raise the pulley to about forehead height.','Clip on the rope attachment.','Pick a very light weight. This is posture work, not a strength test.','Hold the rope ends with thumbs facing you, step back two steps, feet shoulder-width, knees soft.'],
+ how:['Pull the rope toward your forehead, splitting the rope ends apart.','Finish with hands beside your ears and elbows high and wide.','Squeeze your rear shoulders for 1 second.','Return slowly until arms are straight.'],
+ avoid:['Leaning back to pull.','Going heavy.','Letting elbows drop low.'],
+ tip:'Strong rear shoulders pull your shoulders back, which helps desk-posture back pain.',
+ alt:'Reverse pec deck',q:'cable face pull rope'};
+E.backext={id:'backext',kind:'ex',name:'45° back extension',machine:'Angled bench with a hip pad and ankle roller pads. You face the floor',muscle:'Lower back, glutes, hamstrings: back-pain fixer',anim:'backext',sets:3,reps:'10–12',rest:60,mins:8,tempo:'2 s up, 1 s squeeze, 3 s down',
+ setup:['Adjust the pad height so it sits just below your hip bones. You must be able to bend freely at the hips.','Tuck your heels under the ankle rollers with legs straight.','Cross your arms over your chest. Bodyweight only at first.'],
+ how:['Lower your upper body with a flat back until you feel your hamstrings stretch (about 45 degrees).','Squeeze your glutes and rise until your body forms one straight line. Stop there.','Hold the top for 1 second, then lower slowly.'],
+ avoid:['Arching past the straight line (hyperextending).','Swinging up fast.','Rounding your back at the bottom.'],
+ tip:'Lead with your glutes, not your lower back. If your back feels sharp pain, stop and tell your physio.',
+ alt:'Seated back extension machine (light)',q:'45 degree back extension bench'};
+E.crunch={id:'crunch',kind:'ex',name:'Ab crunch machine',machine:'Seat with a back pad and a chest pad or handles that you curl forward',muscle:'Abs: core support for your spine',anim:'crunch',sets:3,reps:'12–15',rest:60,mins:7,tempo:'2 s curl, 1 s squeeze, 3 s return',
+ setup:['Sit with your back against the pad. Adjust the seat so the machine pivot lines up with your belly button.','Hold the handles or rest the chest pad on your upper chest.','Choose a light weight.'],
+ how:['Breathe out and curl your ribs toward your hips. Round your torso, do not just push with your arms.','Pause 1 second.','Return slowly without letting the weight stack touch down.'],
+ avoid:['Pulling with your arms.','Swinging your hips.','Rushing the return.'],
+ tip:'Think “belly button to spine”.',
+ alt:'Cable crunch',q:'ab crunch machine'};
+E.reardelt={id:'reardelt',kind:'ex',name:'Reverse pec deck (rear delt fly)',machine:'The pec deck machine, but you sit facing the pad with your chest on it',muscle:'Rear shoulders and upper back',anim:'reardelt',sets:3,reps:'12–15',rest:60,mins:7,tempo:'2 s out, 1 s squeeze, 3 s return',
+ setup:['Set the seat so the handles are at shoulder height.','Sit facing the pad, chest against it.','Set the arm start position so your arms begin in front of you (use the range lever if there is one).','Grip the handles, palms facing down or neutral.'],
+ how:['Keep a slight bend in your elbows.','Sweep your arms out and back until in line with your shoulders.','Squeeze your shoulder blades for 1 second.','Return slowly.'],
+ avoid:['Shrugging.','Using body momentum.','Pulling your arms far behind your shoulders.'],
+ tip:'Keep the weight light. You should feel it in the back of the shoulders, not your neck.',
+ alt:'Cable face pull',q:'reverse pec deck rear delt machine'};
+E.hipthrust={id:'hipthrust',kind:'ex',name:'Hip thrust machine',machine:'A bench pad for your upper back plus a padded lever or belt that rests across your hips (also called glute drive)',muscle:'Glutes: your main glute builder',anim:'hipthrust',sets:4,reps:'10–12',rest:90,mins:11,tempo:'2 s up, 2 s squeeze, 3 s down',
+ setup:['Adjust the back pad so your shoulder blades rest on it and your hips hover above the floor.','Adjust the lever or belt so the pad sits in the crease of your hips, resting on your pelvis.','Place feet flat, shoulder-width, toes turned slightly out. Shins should be vertical at the top.','Tuck your chin and choose a light weight for the first set.'],
+ how:['Drive through your heels and lift your hips until your torso and thighs form a straight line.','Squeeze your glutes hard for 2 seconds.','Lower slowly until the pad is almost back at the start.'],
+ avoid:['Arching your lower back at the top.','Pushing through your toes.','Feet too far or too close. At the top, shins must be vertical.'],
+ tip:'Keep ribs down and chin tucked. Think “tuck your tailbone” at the top to make the glutes do the job.',
+ alt:'Glute bridge on a Smith machine, or Cable pull-through',q:'hip thrust machine gym'};
+E.legpress={id:'legpress',kind:'ex',name:'Leg press: feet high and wide',machine:'Seat reclined at about 45 degrees, a big foot platform that slides on rails, safety handles at the sides',muscle:'Glutes, hamstrings, quads',anim:'legpress',sets:3,reps:'12',rest:90,mins:9,tempo:'3 s down, 1 s pause, 2 s up',
+ setup:['Sit and adjust the seat so your knees bend about 90 degrees at the bottom, not deeper. Your hips and lower back must stay glued to the seat.','Place your feet high on the platform and a little wider than shoulder-width, toes slightly out. Higher feet hit your glutes and hamstrings more.','Release the safety handles when ready. Knees track over your toes.','Start light. If it is plate-loaded, add equal plates on both sides.'],
+ how:['Push the platform away through your whole foot, mostly your heels.','Stop just short of locking your knees.','Lower slowly until your knees reach about 90 degrees, then stop before your hips lift off the seat.'],
+ avoid:['Locking your knees at the top.','Letting your hips curl up off the seat.','Knees collapsing inward.'],
+ tip:'Never rush the way down. The slow lowering builds the muscle and protects your back.',
+ alt:'Hack squat machine, or Smith machine squat',q:'leg press machine 45 degree'};
+E.legpress2=Object.assign({},E.legpress,{id:'legpress2',name:'Leg press: feet low and close',muscle:'Quads, with glute help',
+ setup:E.legpress.setup.map(function(s,i){return i===1?'Place your feet lower on the platform, about hip-width. Lower feet hit your quads more.':s}),
+ tip:'Keep heels flat. If your heels lift, move your feet a little higher.'});
+E.legcurl={id:'legcurl',kind:'ex',name:'Seated leg curl',machine:'Seat with a thigh hold-down pad and a padded roller that rests on your lower calves',muscle:'Hamstrings',anim:'legcurl',sets:3,reps:'12',rest:75,mins:8,tempo:'2 s curl, 1 s squeeze, 3 s return',
+ setup:['Slide the back pad so your knees line up with the machine pivot, the round axis on the side.','Set the roller just above your heels, on the lower calf.','Lower the thigh pad or lap bar so your thighs are held firmly.','Choose a light weight and hold the handles.'],
+ how:['Curl your heels down and back toward your glutes.','Squeeze your hamstrings for 1 second.','Return slowly until your legs are almost straight.'],
+ avoid:['Lifting your hips off the seat.','Jerking the weight.','Letting the stack slam at the end.'],
+ tip:'Point your toes slightly up (toward your shins) to feel it more in the hamstrings.',
+ alt:'Lying leg curl',q:'seated leg curl machine'};
+E.legext={id:'legext',kind:'ex',name:'Leg extension',machine:'Seat with a padded roller that sits on your lower shins. You straighten your legs',muscle:'Quads',anim:'legext',sets:3,reps:'12–15',rest:60,mins:8,tempo:'2 s up, 1 s squeeze, 3 s down',
+ setup:['Slide the back pad so your knees line up with the machine pivot.','Place the roller on your lower shins, just above the ankles.','Hold the side handles. Choose a light weight.'],
+ how:['Extend your knees until your legs are almost straight.','Squeeze your thighs for 1 second.','Lower slowly for 3 seconds.'],
+ avoid:['Swinging the weight up.','Hard-locking your knees.','Leaning back to lift more.'],
+ tip:'If your knees hurt, lower the weight or skip this move and tell your physio.',
+ alt:'Leg press (feet low)',q:'leg extension machine'};
+E.kickback={id:'kickback',kind:'ex',name:'Glute kickback machine',machine:'Standing machine with a chest pad, handles and a padded lever you push back with one leg',muscle:'Glutes',anim:'kickback',sets:3,reps:'12 each leg',rest:60,mins:10,tempo:'2 s back, 1 s squeeze, 3 s return',
+ setup:['Step onto the platform and lean your chest on the pad. Adjust the pad height so your hip lines up with the pivot.','Place your working foot on the lever pad (the back of the heel or lower calf, depending on the model).','Hold the handles, standing leg slightly bent.','Choose a light weight.'],
+ how:['Keep your hips square.','Push your leg straight back and slightly up, squeezing your glute.','Pause 1 second, then return slowly.','Finish all reps on one leg, then switch.'],
+ avoid:['Arching your lower back to get the leg higher.','Twisting your hips open.','Swinging.'],
+ tip:'Stop when the glute is fully squeezed. Anything higher comes from your lower back, not your glute.',
+ alt:'Cable glute kickback with an ankle strap',q:'glute kickback machine'};
+E.abduction={id:'abduction',kind:'ex',name:'Hip abduction machine',machine:'Seat with two knee pads on the outside of your legs. You push your knees apart',muscle:'Outer glutes (glute med and min)',anim:'abduction',sets:3,reps:'15–20',rest:45,mins:7,tempo:'1 s out, 1 s squeeze, 3 s return',
+ setup:['Sit all the way back against the pad.','Use the start-width lever so your knees begin closer together, then rest the pads on the outside of your knees.','Lean your torso slightly forward and hold the handles. This makes your glutes work more.','Choose a light weight.'],
+ how:['Push your knees out as far as is comfortable.','Pause 1 second.','Return slowly. Do not let the plates clang together.'],
+ avoid:['Bouncing.','Going too heavy.','Lifting your hips off the seat.'],
+ tip:'Lean forward for glutes, sit upright for more outer-thigh. We want glutes today.',
+ alt:'Cable hip abduction with an ankle strap',q:'hip abduction machine'};
+E.adduction={id:'adduction',kind:'ex',name:'Hip adduction machine',machine:'Same seat as the abduction machine, but the pads sit on the inside of your knees',muscle:'Inner thighs: balance and hip stability',anim:'adduction',sets:3,reps:'15',rest:45,mins:7,tempo:'1 s in, 1 s squeeze, 3 s return',
+ setup:['Sit back against the pad.','Use the start-width lever so your legs start open only as far as is comfortable.','Rest the pads on the inside of your knees.','Choose a light weight.'],
+ how:['Squeeze your knees together smoothly.','Pause 1 second.','Open slowly for 3 seconds.'],
+ avoid:['Letting the weight stack slam.','Opening your legs too wide at the start.','Rushing.'],
+ tip:'Balanced inner and outer thighs keep your hips and lower back happier.',
+ alt:'Cable hip adduction with an ankle strap',q:'hip adduction machine'};
+E.calf={id:'calf',kind:'ex',name:'Seated calf raise',machine:'Seat with a knee pad that holds your thighs down and a small foot platform',muscle:'Calves',anim:'calf',sets:3,reps:'15',rest:45,mins:7,tempo:'1 s up, 1 s pause, 3 s down',
+ setup:['Sit and place the balls of your feet on the platform with your heels hanging off.','Adjust the knee pad so it rests snugly just above your knees.','Release the safety lever if there is one.','Choose a light weight.'],
+ how:['Lower your heels for a deep stretch.','Rise as high as you can onto your toes.','Hold the top for 1 second, then lower slowly.'],
+ avoid:['Bouncing at the bottom.','Short range of motion.','Rolling your ankles outward.'],
+ tip:'The slow lowering and the full stretch matter more than the weight.',
+ alt:'Standing calf raise machine',q:'seated calf raise machine'};
+E.chestpress={id:'chestpress',kind:'ex',name:'Chest press machine',machine:'Seat with a back pad and two handles at chest height',muscle:'Chest, front shoulders, triceps',anim:'chestpress',sets:3,reps:'10–12',rest:75,mins:9,tempo:'2 s press, 1 s pause, 3 s return',
+ setup:['Adjust the seat so the handles line up with the middle of your chest and your elbows are slightly below shoulder level.','Sit back against the pad, feet flat. Pull your shoulder blades back and down.','Choose a light weight.'],
+ how:['Press the handles forward until your arms are nearly straight.','Return slowly until you feel a chest stretch, not shoulder strain.'],
+ avoid:['Shoulders rolling forward.','Locking your elbows.','Bouncing at the bottom.'],
+ tip:'Keep your shoulder blades pinned to the pad the whole time.',
+ alt:'Incline chest press machine, or Smith bench press',q:'chest press machine'};
+E.incline={id:'incline',kind:'ex',name:'Incline chest press machine',machine:'Like the chest press, but the handles move up at an angle, hitting the upper chest',muscle:'Upper chest and front shoulders',anim:'chestpress',sets:3,reps:'10–12',rest:75,mins:9,tempo:'2 s press, 1 s pause, 3 s return',
+ setup:['Adjust the seat so the handles start at your upper chest, just below the collarbone.','Back against the pad, feet flat, shoulder blades back and down.','Choose a light weight.'],
+ how:['Press up and forward until your arms are nearly straight.','Return slowly to a comfortable stretch.'],
+ avoid:['Shrugging shoulders to your ears.','Flaring elbows straight out.','Locking your elbows.'],
+ tip:'If you feel it mostly in your shoulders, lower the seat a notch.',
+ alt:'Chest press machine',q:'incline chest press machine'};
+E.pecdeck={id:'pecdeck',kind:'ex',name:'Pec deck (butterfly)',machine:'Seat with two vertical arm pads you squeeze together in front of your chest',muscle:'Chest',anim:'pecdeck',sets:3,reps:'12',rest:60,mins:8,tempo:'2 s in, 1 s squeeze, 3 s out',
+ setup:['Set the seat so the pads or handles are at chest and shoulder height.','Back flat on the pad. Place forearms on the pads, elbows at shoulder level.','Set the range limiter so the starting stretch is comfortable.','Choose a light weight.'],
+ how:['Bring the pads together in front of your chest, breathing out.','Squeeze for 1 second.','Return slowly until you feel a mild stretch.'],
+ avoid:['Letting your elbows drop below your shoulders.','Rounding your shoulders forward.','Going too deep on the stretch.'],
+ tip:'Imagine hugging a big tree.',
+ alt:'Cable crossover',q:'pec deck machine'};
+E.shoulderpress={id:'shoulderpress',kind:'ex',name:'Shoulder press machine',machine:'Seat with a back pad and two handles at shoulder level that you press overhead',muscle:'Shoulders and triceps',anim:'shoulderpress',sets:3,reps:'10–12',rest:75,mins:9,tempo:'2 s up, 1 s pause, 3 s down',
+ setup:['Adjust the seat so the handles are at ear level when you sit.','Back flat against the pad, feet flat on the floor.','Choose a light weight.'],
+ how:['Press straight up without locking your elbows.','Lower slowly to ear level.'],
+ avoid:['Arching your lower back (keep your ribs down).','Shrugging.','Locking your elbows hard.'],
+ tip:'Brace your stomach as if someone is about to tap it.',
+ alt:'Smith machine shoulder press',q:'shoulder press machine'};
+E.lateral={id:'lateral',kind:'ex',name:'Lateral raise machine',machine:'Seat with two padded arms that rest on the outside of your elbows',muscle:'Side shoulders',anim:'lateral',sets:3,reps:'12–15',rest:60,mins:8,tempo:'2 s up, 1 s pause, 3 s down',
+ setup:['Set the seat height so the pivot sits at shoulder level.','Rest your elbows or forearms against the pads. Back flat on the seat.','Choose a light weight.'],
+ how:['Raise your elbows out to shoulder height, no higher.','Pause 1 second.','Lower slowly.'],
+ avoid:['Shrugging.','Using momentum.','Going above shoulder height.'],
+ tip:'Think of pushing your elbows out to the walls.',
+ alt:'Cable lateral raise',q:'lateral raise machine'};
+E.pushdown={id:'pushdown',kind:'ex',name:'Triceps pushdown (cable)',machine:'High cable pulley with a rope or short straight bar',muscle:'Triceps',anim:'pushdown',sets:3,reps:'12',rest:60,mins:8,tempo:'2 s down, 1 s squeeze, 3 s up',
+ setup:['Set the pulley at the top and attach the rope or straight bar.','Stand close, feet shoulder-width, a slight forward lean.','Pin your elbows to your ribs. Choose a light weight.'],
+ how:['Press down until your arms are straight.','Squeeze your triceps for 1 second.','Return slowly until your forearms are just above 90 degrees.'],
+ avoid:['Elbows flaring or swinging forward.','Leaning over the weight.','Using your shoulders.'],
+ tip:'Only your forearms should move.',
+ alt:'Assisted dip machine, or Triceps extension machine',q:'triceps pushdown cable'};
+E.assistedpull={id:'assistedpull',kind:'ex',name:'Assisted pull-up machine',machine:'Tall frame with a knee platform on a weight stack. The weight you select HELPS lift you, so heavier means easier',muscle:'Lats, upper back, biceps',anim:'assistedpull',sets:3,reps:'6–10',rest:90,mins:10,tempo:'2 s up, 1 s squeeze, 3 s down',
+ setup:['Choose heavy assistance so you can do 8 clean reps. Reduce the assistance as you get stronger.','Step onto the platform and kneel or stand on it.','Grip the handles with a wide overhand or neutral grip.','Pull your shoulders down away from your ears before you start.'],
+ how:['Start from a straight-arm hang with your shoulder blades pulled down.','Pull your elbows to your ribs until your chin passes the handles.','Lower slowly for 3 seconds until your arms are straight again.'],
+ avoid:['Kicking or jerking.','Shrugging up.','Half reps.'],
+ tip:'Each time you can do 10 clean reps, drop the assistance one plate.',
+ alt:'Lat pulldown',q:'assisted pull up machine'};
+E.curl={id:'curl',kind:'ex',name:'Biceps curl machine',machine:'Seat with an angled arm pad (preacher style) and handles',muscle:'Biceps',anim:'curl',sets:3,reps:'10–12',rest:60,mins:8,tempo:'2 s up, 1 s squeeze, 3 s down',
+ setup:['Adjust the seat so your armpits rest on top of the pad.','Set the handle start position so your arms are nearly straight at the bottom.','Choose a light weight.'],
+ how:['Curl the handles up toward your shoulders.','Squeeze 1 second.','Lower slowly to nearly straight.'],
+ avoid:['Lifting your elbows off the pad.','Swinging.','Hard-locking out at the bottom.'],
+ tip:'Slow lowering is where biceps grow.',
+ alt:'Cable curl',q:'preacher curl machine'};
+
+/* ---- substitute exercises ---- */
+E.smiththrust={id:'smiththrust',kind:'ex',name:'Smith machine hip thrust',machine:'Smith machine (a barbell on fixed vertical rails with hooks) plus a flat bench',muscle:'Glutes: replaces the hip thrust machine',anim:'smiththrust',sets:4,reps:'10–12',rest:90,mins:11,tempo:'2 s up, 2 s squeeze, 3 s down',
+ setup:['Slide a flat bench sideways in front of the Smith bar so its edge is where your shoulder blades will rest.','Wrap a thick pad or folded mat around the middle of the bar. Do not skip this, the bar hurts without it.','Set the bar on the hooks at about hip height when you sit on the floor. Start with the bar only, add small plates later.','Sit on the floor, upper back against the bench edge. Roll the bar over your thighs onto your hip crease. Feet flat, shins vertical at the top.'],
+ how:['Rotate the bar to unhook it, then drive through your heels.','Lift your hips until your torso and thighs form a straight line. Squeeze your glutes for 2 seconds.','Lower slowly. When you finish, rotate the bar back onto the hooks.'],
+ avoid:['Arching your lower back at the top.','Pushing through your toes.','Loading heavy before you can do 12 clean reps with the bar alone.'],
+ tip:'Chin tucked, ribs down. If you cannot rotate the hooks easily, ask staff to show you the Smith safety catches first.',
+ alt:'Leg press with feet high',q:'smith machine hip thrust'};
+E.cablekick={id:'cablekick',kind:'ex',name:'Cable glute kickback (ankle strap)',machine:'Cable tower with the pulley at the bottom and an ankle strap clipped on',muscle:'Glutes: replaces the kickback machine',anim:'cablekick',sets:3,reps:'12 each leg',rest:60,mins:10,tempo:'2 s back, 1 s squeeze, 3 s return',
+ setup:['Move the pulley to the lowest position and clip on the ankle strap.','Fasten the strap around the ankle of your working leg.','Face the tower, hold the frame with both hands, step back a little and lean slightly forward. Standing leg slightly bent.','Choose a light weight. Cables feel heavier than they look.'],
+ how:['Keep your hips square to the tower.','Push your working leg straight back and slightly up, squeezing your glute.','Pause 1 second, then return slowly. Do all reps on one leg, then switch.'],
+ avoid:['Arching your lower back to lift the leg higher.','Twisting your hips open.','Swinging the leg.'],
+ tip:'Stop when the glute is fully squeezed. Anything higher comes from your back.',
+ alt:'Kickback machine',q:'cable glute kickback ankle strap'};
+E.cableabd={id:'cableabd',kind:'ex',name:'Cable hip abduction (ankle strap)',machine:'Cable tower with the pulley at the bottom and an ankle strap',muscle:'Outer glutes: replaces the abduction machine',anim:'cableabd',sets:3,reps:'15 each leg',rest:45,mins:7,tempo:'2 s out, 1 s squeeze, 3 s return',
+ setup:['Pulley at the bottom, ankle strap clipped on.','Stand sideways to the tower and strap the ankle that is farthest from the tower. The cable crosses in front of your standing leg.','Hold the frame for balance and keep your torso upright.','Choose a light weight.'],
+ how:['Lift the strapped leg out to the side, toes pointing forward.','Squeeze your outer glute for 1 second.','Return slowly without letting the weight stack touch down.'],
+ avoid:['Leaning your body away to cheat.','Swinging the leg.','Pointing your toes up (it shifts work off the glute).'],
+ tip:'Small, controlled range. Your outer hip should burn, not your back.',
+ alt:'Hip abduction machine',q:'cable hip abduction ankle strap'};
+E.cableadd={id:'cableadd',kind:'ex',name:'Cable hip adduction (ankle strap)',machine:'Cable tower with the pulley at the bottom and an ankle strap',muscle:'Inner thighs: replaces the adduction machine',anim:'cableadd',sets:3,reps:'15 each leg',rest:45,mins:7,tempo:'2 s in, 1 s squeeze, 3 s return',
+ setup:['Pulley at the bottom, ankle strap clipped on.','Stand sideways to the tower and strap the ankle that is NEAREST the tower.','Hold the frame for balance, torso upright.','Choose a light weight.'],
+ how:['Start with the leg out to the side toward the tower.','Pull it across the front of your standing leg, squeezing your inner thigh.','Return slowly.'],
+ avoid:['Twisting your torso.','Letting the cable yank your leg out.','Going heavy.'],
+ tip:'Keep the standing knee soft, not locked.',
+ alt:'Hip adduction machine',q:'cable hip adduction ankle strap'};
+E.cablepull={id:'cablepull',kind:'ex',name:'Single-arm cable pulldown',machine:'Cable tower with the pulley at the top and a single D-handle',muscle:'Lats and upper back: replaces the lat pulldown',anim:'cablepull',sets:3,reps:'12 each arm',rest:60,mins:9,tempo:'2 s pull, 1 s squeeze, 3 s return',
+ setup:['Move the pulley to the top and clip on the D-handle.','Stand facing the tower one step back, a slight lean back, other hand on the frame.','Take the handle with one hand, arm reaching up and forward.','Choose a light weight.'],
+ how:['Pull your elbow down and back toward your hip, squeezing your lat.','Pause 1 second.','Return slowly until your arm is long again. Finish all reps, then switch arms.'],
+ avoid:['Twisting your torso.','Shrugging your shoulder to your ear.','Yanking the handle.'],
+ tip:'Think “elbow into back pocket”.',
+ alt:'Lat pulldown',q:'single arm cable lat pulldown'};
+E.birddog={id:'birddog',kind:'ex',name:'Bird-dog (floor)',machine:'No machine. Use a mat on the floor',muscle:'Lower back, glutes, core: a back-pain staple',anim:'birddog',sets:3,reps:'8 each side',rest:45,mins:8,tempo:'3 s out, 2 s hold, 3 s back',
+ setup:['Get on hands and knees on a mat: hands under shoulders, knees under hips.','Keep your back flat like a table and neck long, eyes on the floor.'],
+ how:['Slowly stretch one arm forward and the opposite leg back until both are in line with your back.','Hold 2 seconds without letting your hips rotate.','Return slowly and switch sides.'],
+ avoid:['Arching or sagging your lower back.','Rotating your hips open.','Rushing.'],
+ tip:'Imagine a glass of water on your lower back. Do not spill it.',
+ alt:'45° back extension',q:'bird dog exercise'};
+
+
+/* ---- my own machines ---- */
+var PAT=[
+ ['pulldown','Pulls a bar down from above (like a lat pulldown)','pulldown'],
+ ['row','Pulls a handle toward you while seated (like a row)','seatedrow'],
+ ['chestrow','Row with a chest pad (like a chest-supported row)','chestrow'],
+ ['assistedpull','Pull-up style with assistance','assistedpull'],
+ ['chestpress','Pushes handles forward (like a chest press)','chestpress'],
+ ['shoulderpress','Pushes handles overhead (like a shoulder press)','shoulderpress'],
+ ['pecdeck','Brings your arms together in front (like a pec deck)','pecdeck'],
+ ['lateral','Lifts your arms out to the sides (like a lateral raise)','lateral'],
+ ['curl','Curls your arms (like a biceps curl)','curl'],
+ ['pushdown','Presses down with your arms (like a triceps pushdown)','pushdown'],
+ ['legpress','Pushes a platform with your feet (like a leg press)','legpress'],
+ ['legcurl','Curls your heels back (like a leg curl)','legcurl'],
+ ['legext','Straightens your legs (like a leg extension)','legext'],
+ ['hipthrust','Lifts your hips (like a hip thrust)','hipthrust'],
+ ['kickback','Pushes one leg back (like a glute kickback)','kickback'],
+ ['abduction','Opens your legs out (like hip abduction)','abduction'],
+ ['adduction','Closes your legs in (like hip adduction)','adduction'],
+ ['calf','Raises your heels (like a calf raise)','calf'],
+ ['crunch','Curls your torso forward (like an ab crunch)','crunch'],
+ ['backext','Extends your back (like a back extension)','backext']
+];
+function esc(x){return String(x).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function patOf(id){for(var i=0;i<PAT.length;i++)if(PAT[i][0]===id)return PAT[i];return PAT[4]}
+function mkCustom(c){
+  var p=patOf(c.pat),b=E[p[2]];
+  return {id:'c_'+c.id,kind:'ex',custom:1,name:esc(c.name),machine:esc(c.name)+' (your gym machine).'+(c.note?' '+esc(c.note):''),muscle:b.muscle,anim:b.anim,sets:3,reps:'10–12',rest:75,mins:9,tempo:b.tempo,
+   setup:['These steps are for a machine that works like a '+b.name.toLowerCase()+'. Read the diagram on your machine and ask staff for a one-minute demo if you have not used it.'].concat(b.setup),
+   how:b.how,avoid:b.avoid,tip:'Start light and adjust the seat and pads until the motion feels smooth and your joints line up with the machine pivot. '+b.tip,
+   alt:'Ask staff for a similar machine',q:c.name+' machine gym'};
+}
+function customFor(di){return ((typeof MEM!=='undefined'&&MEM.gym&&MEM.gym.custom)||[]).filter(function(c){return c.days&&c.days.indexOf(di)>=0}).map(mkCustom)}
+
+/* ---- equipment tick-list and substitution rules ---- */
+var GEAR=[
+ ['Cardio',[['treadmill','Treadmill'],['bike','Stationary bike'],['rower','Rowing machine']]],
+ ['Back',[['latpd','Lat pulldown station'],['row','Seated cable row'],['chestrow','Chest-supported row machine'],['assist','Assisted pull-up machine'],['backext','45° back extension bench']]],
+ ['Chest and shoulders',[['chestpress','Chest press machine'],['incline','Incline chest press machine'],['pecdeck','Pec deck (also reverse pec deck)'],['shoulderpress','Shoulder press machine'],['lateral','Lateral raise machine']]],
+ ['Arms and core',[['curl','Biceps curl machine (preacher)'],['crunch','Ab crunch machine']]],
+ ['Legs and glutes',[['hipthrust','Hip thrust machine'],['legpress','Leg press'],['legcurl','Seated leg curl'],['legext','Leg extension'],['kickback','Glute kickback machine'],['abduct','Hip abduction machine'],['adduct','Hip adduction machine'],['calf','Seated calf raise']]],
+ ['Cables and Smith',[['cable','Cable tower with pulleys (cable crossover)'],['smith','Smith machine and a flat bench']]]
+];
+var EQ={pulldown:'latpd',pulldown2:'latpd',seatedrow:'row',chestrow:'chestrow',facepull:'cable',backext:'backext',crunch:'crunch',reardelt:'pecdeck',pecdeck:'pecdeck',
+ hipthrust:'hipthrust',legpress:'legpress',legpress2:'legpress',legcurl:'legcurl',legext:'legext',kickback:'kickback',abduction:'abduct',adduction:'adduct',calf:'calf',
+ chestpress:'chestpress',incline:'incline',shoulderpress:'shoulderpress',lateral:'lateral',pushdown:'cable',assistedpull:'assist',curl:'curl',
+ smiththrust:'smith',cablekick:'cable',cableabd:'cable',cableadd:'cable',cablepull:'cable',
+ warm:'treadmill',tint:'treadmill',row:'rower',warmbike:'bike'};
+var SUB={pulldown:['assistedpull','cablepull'],pulldown2:['assistedpull','cablepull'],assistedpull:['pulldown','cablepull'],seatedrow:['chestrow'],chestrow:['seatedrow'],
+ facepull:['reardelt'],reardelt:['facepull'],backext:['birddog'],hipthrust:['smiththrust'],legpress2:['legext'],legext:['legpress2'],kickback:['cablekick'],
+ abduction:['cableabd'],adduction:['cableadd'],chestpress:['incline'],incline:['chestpress']};
+function eqOf(e){if(EQ[e.id])return EQ[e.id];if(/^inc\d/.test(e.id))return 'treadmill';if(/^bike\d/.test(e.id))return 'bike';return ''}
+function gymMissing(){return (MEM&&MEM.gym&&MEM.gym.missing)||[]}
+function applyGym(steps,miss,omitted,off){
+  off=off||[];
+  if(!miss.length&&!off.length)return steps;
+  var has=function(q){return !q||miss.indexOf(q)<0},out=[];
+  var taken={};steps.forEach(function(s){taken[s.e.id]=1});
+  steps.forEach(function(s){
+    var q=eqOf(s.e),isOff=off.indexOf(s.e.id)>=0;
+    if(!isOff&&has(q)){out.push(s);return}
+    var sub=null,o=s.e;
+    if(isOff&&(o.kind==='stretch'||o.custom)){omitted.push(o.name);return}
+    if(s.t==='ex'){
+      (SUB[o.id]||[]).some(function(id){
+        if(E[id]&&has(eqOf(E[id]))&&!taken[id]){sub=X(id,{sets:o.sets,mins:o.mins});taken[id]=1;return true}
+        return false;
+      });
+    }else if(o.kind==='warm'){
+      if(has('bike')&&o.anim!=='bike')sub=mkTimed(T.warmbike);
+    }else if(o.kind==='cardio'){
+      var m=Math.max(5,Math.round(o.total/60));
+      if(has('bike')&&o.anim!=='bike')sub=mkTimed(tBike(m));
+      else if(has('treadmill')&&o.anim!=='incline'&&o.anim!=='treadmill')sub=mkTimed(tInc(m));
+      else if(has('treadmill')&&!isOff)sub=mkTimed(tInc(m));
+    }
+    if(sub){s.rep=o.name;s.e=sub;out.push(s)}else omitted.push(o.name);
+  });
+  return out;
+}
+function gymPreview(miss){
+  var lines=[];
+  DAYS.forEach(function(d,i){
+    if(d.rest)return;
+    var st=buildSteps(i,miss),parts=[];
+    st.forEach(function(s){if(s.rep)parts.push(s.rep+' → '+s.e.name)});
+    (st.omitted||[]).forEach(function(n){parts.push(n+' removed')});
+    if(parts.length)lines.push({d:d.short,p:parts});
+  });
+  return lines;
+}
+
+[['pulldown','assistedpull'],['pulldown2','assistedpull'],['seatedrow','chestrow'],['chestrow','seatedrow'],['facepull','reardelt'],['reardelt','facepull'],['legext','legpress2'],['legpress2','legext'],['chestpress','incline'],['incline','chestpress'],['assistedpull','pulldown']].forEach(function(p){E[p[0]].altId=p[1]});
+var T={};
+T.warm={id:'warm',kind:'warm',name:'Treadmill warm-up walk',machine:'Treadmill: a moving belt with a console and handrails',anim:'treadmill',cycle:false,
+ segs:[['Easy walk: 4–4.5 km/h',180],['Brisk walk: 5.5–6 km/h',180]],
+ setup:['Clip the red safety key to your clothes.','Stand on the side rails and set the speed to 4 km/h before stepping on.','Step onto the belt, then start walking. No holding on if you can avoid it.'],
+ how:['Walk tall and swing your arms.','Speed up after 3 minutes.','By the end you should be warm with a light sweat.'],
+ avoid:['Gripping the rails.','Looking down at your feet.'],tip:'The warm-up gets blood into your back and glutes before you load them.',q:'treadmill gym'};
+T.warmbike={id:'warmbike',kind:'warm',name:'Bike warm-up',machine:'Upright bike with a seat, handlebar and adjustable resistance',anim:'bike',cycle:false,
+ segs:[['Easy spin: 60–70 rpm, light resistance',360]],
+ setup:['Adjust the seat so your knee is slightly bent at the bottom of the pedal stroke.','Set the handlebar so you sit tall without reaching.','Choose a light resistance.'],
+ how:['Spin easily for 6 minutes.','You should feel warm with a light sweat by the end.'],
+ avoid:['Gripping the bars hard.','Starting with heavy resistance.'],tip:'Same goal as the treadmill warm-up: get blood into your back and glutes before you load them.',q:'upright stationary bike'};
+function tInc(m){return {id:'inc'+m,kind:'cardio',name:'Incline treadmill walk',machine:'Treadmill with the incline raised',anim:'incline',total:m*60,segs:[['Steady incline walk: 5 km/h at 8–10% incline',m*60]],
+ setup:['Clip the safety key on.','Set the speed to 5 km/h and the incline to 8–10%.','Walk without holding the rails.'],
+ how:['Pace should leave you able to talk in short sentences.','Take small, quick steps. Stand tall, do not lean on the console.'],
+ avoid:['Holding the rails (it shortens your stride and lowers the effort).','Setting speed too high so you hunch forward.'],tip:'Incline walking builds glutes and stamina with very low impact on your back.',q:'incline treadmill walking'}}
+function tBike(m){return {id:'bike'+m,kind:'cardio',name:'Stationary bike',machine:'Upright bike with a seat, handlebar and adjustable resistance',anim:'bike',cycle:true,total:m*60,
+ segs:[['Steady spin: 70–80 rpm, moderate resistance',150],['Push harder for 30 seconds',30]],
+ setup:['Adjust the seat so your knee is slightly bent at the bottom of the pedal stroke.','Set the handlebar so you sit tall without reaching.','Set a moderate resistance, a level where you breathe harder but can still talk.'],
+ how:['Spin smoothly at 70–80 rpm.','Every 3 minutes, push harder for 30 seconds.','Keep shoulders relaxed and your core lightly tight.'],
+ avoid:['Gripping the bars hard.','Rocking your hips side to side.'],tip:'Stamina grows when you keep moving. Do not stop pedaling for the whole block.',q:'upright stationary bike'}}
+var TINT={id:'tint',kind:'cardio',name:'Treadmill intervals',machine:'Treadmill',anim:'treadmill',cycle:true,total:900,
+ segs:[['Easy: 5–6 km/h',120],['Fast: 7–8 km/h (or 10% incline)',60]],
+ setup:['Clip the safety key on.','Start at the easy speed. You will change speed when the timer switches.','Press the speed button before the next phase begins so you are ready.'],
+ how:['2 minutes easy, 1 minute fast. Repeat 5 times.','During the fast phase you should breathe hard but still hold good form.'],
+ avoid:['Sprinting at an uncomfortable speed.','Hanging on the rails during fast sections.'],tip:'Intervals are the quickest way to build stamina. Easy phases are for recovering, not stopping.',q:'treadmill'};
+var TROW={id:'row',kind:'cardio',name:'Rowing machine',machine:'Seat on a rail, foot plates, a flywheel and a handle on a chain',anim:'rower',cycle:true,total:600,
+ segs:[['Easy rowing: smooth strokes',90],['Strong strokes',30]],
+ setup:['Sit and strap your feet in tight across the middle of your feet.','Set the damper (the dial on the flywheel) to 3–5, not 10.','Grab the handle with straight arms and shins vertical.'],
+ how:['Drive: push with your legs first, lean back slightly, then pull the handle to your lower ribs.','Return: arms out first, then lean forward, then bend your knees.','Keep a ratio of one count for the drive, two counts for the return.'],
+ avoid:['Pulling with your arms first.','Hunching your back.','Rushing the slide forward.'],tip:'Legs, body, arms on the way back. Arms, body, legs on the way forward.',q:'rowing machine gym'};
+function tStr(id,name,anim,segs,setup,how,tip){return {id:id,kind:'stretch',name:name,machine:'No machine. Use the floor or a mat',anim:anim,segs:segs,setup:setup,how:how,avoid:['Bouncing.','Pushing through sharp pain.'],tip:tip,q:name+' stretch'}}
+var S={};
+S.child=tStr('child','Child’s pose','child',[['Hold and breathe slowly',60]],['Kneel on a mat, big toes touching, knees wide.','Sit your hips back toward your heels.'],['Walk your hands forward and rest your forehead down.','Breathe into your lower back and the sides of your ribs.'],'Stretches your lats and lower back. Feels like gentle pulling, not pain.');
+S.catcow=tStr('catcow','Cat–cow','catcow',[['Move slowly with your breath',60]],['Get on hands and knees: hands under shoulders, knees under hips.'],['Breathe in: let your belly drop and look up (cow).','Breathe out: round your back toward the ceiling and tuck your chin (cat).','Move slowly through 10 rounds.'],'Mobilises the spine and eases stiffness before you go home.');
+S.kneechest=tStr('kneechest','Knee-to-chest','kneechest',[['Left knee',30],['Right knee',30]],['Lie on your back on a mat, legs straight.'],['Pull one knee toward your chest with both hands.','Keep the other leg flat and your head resting down.','Breathe slowly and switch halfway.'],'Releases the lower back and glutes. Great for back pain.');
+S.hipflexor=tStr('hipflexor','Half-kneeling hip flexor','hipflexor',[['Left leg back',30],['Right leg back',30]],['Kneel on one knee on a mat, front foot flat ahead of you. Put a folded towel under your back knee if needed.'],['Tuck your tailbone under (squeeze your back-leg glute).','Gently shift your hips forward until you feel a stretch at the front of the back hip.','Stay tall. Switch halfway.'],'Tight hip flexors tilt your pelvis and add to lower-back tension.');
+S.quad=tStr('quad','Standing quad stretch','quad',[['Left leg',30],['Right leg',30]],['Stand next to a wall for balance and place one hand on it.'],['Bend one knee and hold your ankle behind you.','Keep your knees together and your hips tucked slightly forward.','Switch halfway.'],'Keep your back straight. Do not arch your lower back.');
+S.chest=tStr('chest','Doorway chest stretch','chestdoor',[['Left arm',30],['Right arm',30]],['Stand in a doorway or beside a pillar. Place your forearm on the frame with your elbow bent at 90 degrees.'],['Step one foot forward and gently lean through until you feel a stretch across your chest.','Keep your ribs down. Switch halfway.'],'Opens up shoulders that round forward from machine pressing and desk work.');
+
+function X(id,over){return Object.assign({},E[id],over||{})}
+var DAYS=[
+ {short:'Mon',tag:'Back',title:'Back thickness and core',why:'Builds a thicker back and the lower-back strength that eases pain.',
+  warm:T.warm,ex:[X('pulldown'),X('seatedrow'),X('chestrow'),X('facepull'),X('backext'),X('crunch'),X('reardelt')],fin:tInc(15),str:['child','catcow','kneechest','chest']},
+ {short:'Tue',tag:'Glutes',title:'Glutes and hamstrings',why:'Your main glute-building day. Hip thrusts and presses go first, while you are fresh.',
+  warm:T.warm,ex:[X('hipthrust'),X('legpress'),X('legcurl'),X('kickback'),X('abduction'),X('adduction'),X('calf')],fin:tBike(12),str:['kneechest','hipflexor','quad','child']},
+ {short:'Wed',tag:'Push',title:'Chest, shoulders, triceps',why:'Upper-body push day. Your back and glutes recover while you train the front.',
+  warm:T.warm,ex:[X('chestpress'),X('incline'),X('pecdeck'),X('shoulderpress'),X('lateral'),X('pushdown'),X('crunch',{id:'crunch'})],fin:tBike(15),str:['chest','child','catcow']},
+ {short:'Thu',tag:'Back wide',title:'Back width, biceps, core',why:'Wider lats and stronger pulling muscles. Second back day of the week.',
+  warm:T.warm,ex:[X('assistedpull'),X('pulldown2'),X('chestrow'),X('reardelt'),X('curl'),X('crunch'),X('backext')],fin:tInc(12),str:['child','catcow','chest','kneechest']},
+ {short:'Fri',tag:'Glutes',title:'Glutes and quads',why:'Second glute day: heavier hip thrusts, quads, and calves.',
+  warm:T.warm,ex:[X('hipthrust',{reps:'8–10',tempo:'2 s up, 2 s squeeze, 3 s down'}),X('legpress2'),X('legext'),X('kickback'),X('abduction'),X('calf'),X('backext')],fin:tBike(12),str:['quad','hipflexor','kneechest','child']},
+ {short:'Sat',tag:'Stamina',title:'Stamina and mobility (lighter day)',why:'Build your engine and loosen up. Keep this one easy and steady.',
+  warm:T.warm,ex:[X('crunch',{sets:2,mins:5,reps:'15'}),X('backext',{sets:2,mins:5,reps:'12'})],fin:null,extra:[TINT,TROW,tBike(12)],str:['catcow','child','kneechest','hipflexor','quad','chest']},
+ {short:'Sun',tag:'Rest',title:'Rest day',rest:true,why:'Muscle grows while you rest. Walk 20–30 minutes outdoors if you like. No machines.'}
+];
+
+function mkTimed(t){var o=Object.assign({},t);if(!o.total)o.total=o.segs.reduce(function(a,s){return a+s[1]},0);return o}
+function buildSteps(di,miss,off){
+  miss=miss||gymMissing();off=off||[];
+  var d=DAYS[di],steps=[];
+  steps.push({t:'timed',e:mkTimed(d.warm),sec:'Warm-up'});
+  var xs=d.ex.map(function(e){return {t:'ex',e:e,sec:'Machines'}});
+  customFor(di).forEach(function(c){xs.push({t:'ex',e:c,sec:'Machines'})});
+  if(d.extra){ // Saturday: cardio first, then light core, then bike
+    d.extra.slice(0,2).forEach(function(c){steps.push({t:'timed',e:mkTimed(c),sec:'Stamina'})});
+    xs.forEach(function(s){steps.push(s)});
+    steps.push({t:'timed',e:mkTimed(d.extra[2]),sec:'Stamina'});
+  }else{
+    xs.forEach(function(s){steps.push(s)});
+    if(d.fin)steps.push({t:'timed',e:mkTimed(d.fin),sec:'Stamina finish'});
+  }
+  d.str.forEach(function(k){steps.push({t:'timed',e:mkTimed(S[k]),sec:'Stretch, no machine'})});
+  var omitted=[];steps=applyGym(steps,miss,omitted,off);
+  var cum=0;
+  steps.forEach(function(s,k){s.k=k;s.st='todo';s.prog=0;s.sw='';s.orig=s.e;s.mins=s.t==='ex'?s.e.mins:s.e.total/60+(s.e.kind==='stretch'?.5:1);s.plan=cum;cum+=s.mins});
+  steps.total=cum;steps.omitted=omitted;
+  return steps;
+}
+function fmtMin(m){m=Math.round(m);return Math.floor(m/60)+':'+('0'+(m%60)).slice(-2)}
+function mmss(sec){sec=Math.max(0,Math.ceil(sec));return Math.floor(sec/60)+':'+('0'+(sec%60)).slice(-2)}
+function photo(q){return 'https://www.google.com/search?tbm=isch&q='+encodeURIComponent(q)}
+function phases(e){
+  if(!e.cycle)return e.segs.map(function(s){return {l:s[0],s:s[1]}});
+  var out=[],tot=0;
+  while(tot<e.total-0.1){for(var i=0;i<e.segs.length;i++){if(tot>=e.total-0.1)break;var s=Math.min(e.segs[i][1],e.total-tot);out.push({l:e.segs[i][0],s:s});tot+=s;}}
+  return out;
+}
+
+/* ============ STATE & STORAGE ============ */
+var todayIdx=(new Date().getDay()+6)%7;
+var G={day:todayIdx===6?0:todayIdx,err:false,hint:false,disc:false,off:{},rep:{gym:true,hist:true,use:true,fb:''},cw:'',cf:{name:'',pat:'chestpress',days:[],note:''}};
+var sess=null,tick=0,clockT=0,audio=null,svT=0,toastT=0,hbN=0;
+var K_SESS='ip:sess2',K_MEM='ip:mem2';
+var LSOK=(function(){try{localStorage.setItem('ip:t','1');localStorage.removeItem('ip:t');return true}catch(e){return false}})();
+var MEM={ts:0,w:{},log:[]},SAVED=null,dbH=null,uid=null,wT={};
+
+function ymd(d){d=d||new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+function mondayYmd(){var d=new Date();d.setDate(d.getDate()-((d.getDay()+6)%7));return ymd(d)}
+function fmtDate(s){try{var p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2]).toLocaleDateString(undefined,{day:'numeric',month:'short'})}catch(e){return s}}
+function readLS(k){try{return JSON.parse(ls.get(k)||'null')}catch(e){return null}}
+function clone(o){return JSON.parse(JSON.stringify(o))}
+function flash(){
+  var el=document.getElementById('sv');if(!el)return;
+  el.textContent='Saved ✓';clearTimeout(svT);svT=setTimeout(function(){var e2=document.getElementById('sv');if(e2)e2.textContent=''},1600);
+}
+function toast(msg){
+  var t=document.getElementById('toast');if(!t)return;
+  t.textContent=msg;t.className='toast on';clearTimeout(toastT);toastT=setTimeout(function(){t.className='toast'},2600);
+}
+function dbWrite(name,obj){
+  if(!dbH||!uid)return;
+  clearTimeout(wT[name]);
+  wT[name]=setTimeout(function(){try{dbH.doc('data/users/'+uid+'/'+name).set(clone(obj)).catch(function(){})}catch(e){}},700);
+}
+function bump(kind,key){MEM.stats[kind][key]=(MEM.stats[kind][key]||0)+1;saveMem()}
+function saveMem(){MEM.ts=Date.now();ls.set(K_MEM,JSON.stringify(MEM));dbWrite('memory',MEM)}
+function saveSess(quiet){
+  if(!sess||sess.i<0||sess.stage==='done')return;
+  var cur=sess.steps[sess.i],dn=sess.steps.filter(function(s){return s.st!=='todo'}).length;
+  var o={active:true,off:sess.off||[],gs:gymSig(),ts:Date.now(),seen:Date.now(),day:sess.day,i:sess.i,stage:sess.stage,start:sess.start,skipped:sess.skipped,
+    nm:cur?cur.e.name:'',dn:dn,tt:sess.steps.length,wl:sess.wl,
+    steps:sess.steps.map(function(s){return {k:s.k,st:s.st,sw:s.sw||'',p:s.prog||0}})};
+  SAVED=o;ls.set(K_SESS,JSON.stringify(o));dbWrite('session',o);if(!quiet)flash();
+}
+function clearSess(){SAVED=null;var o={active:false,ts:Date.now()};ls.set(K_SESS,JSON.stringify(o));dbWrite('session',o)}
+function activeSaved(){var s=SAVED;return (s&&s.active&&s.steps&&s.i>=0&&Date.now()-(s.seen||0)<24*3600*1000&&(s.gs||'|')===gymSig())?s:null}
+function refreshGate(){
+  if(sess)return;
+  var sv=activeSaved();if(sv&&!G.touched)G.day=sv.day;
+  var cw=document.getElementById('cw');if(!cw||!cw.value)render();
+}
+function gymSig(){var c=((MEM&&MEM.gym&&MEM.gym.custom)||[]).map(function(x){return x.id+':'+(x.days||[]).join('')+':'+x.pat}).join(',');return gymMissing().slice().sort().join(',')+'|'+c}
+function normMem(){MEM=MEM||{};MEM.stats=MEM.stats||{};['done','skipped','later','swap'].forEach(function(k){MEM.stats[k]=MEM.stats[k]||{}});MEM.gym=MEM.gym||null;if(MEM.gym){MEM.gym.missing=MEM.gym.missing||[];MEM.gym.custom=MEM.gym.custom||[]}MEM.w=MEM.w||{};MEM.log=MEM.log||[];MEM.ts=MEM.ts||0}
+function initStore(){
+  var m=readLS(K_MEM);if(m)MEM=m;normMem();
+  SAVED=readLS(K_SESS);
+  var sv=activeSaved();if(sv)G.day=sv.day;
+  try{
+    if(window.claude&&window.claude.use){
+      Promise.all([window.claude.use('db'),window.claude.use('user')]).then(function(r){
+        var db=r[0],user=r[1];if(!db||!user||!user.id)return;
+        return user.id().then(function(id){
+          if(!id)return;dbH=db;uid=id;
+          return Promise.all([db.doc('data/users/'+id+'/memory').get(),db.doc('data/users/'+id+'/session').get()]).then(function(s){
+            var dm=s[0].exists?clone(s[0].data()):null,ds=s[1].exists?clone(s[1].data()):null;
+            if(dm&&(dm.ts||0)>(MEM.ts||0)){MEM=dm;normMem();ls.set(K_MEM,JSON.stringify(MEM))}else if(MEM.ts){dbWrite('memory',MEM)}
+            if(ds&&(ds.ts||0)>((SAVED&&SAVED.ts)||0)){SAVED=ds;ls.set(K_SESS,JSON.stringify(ds))}else if(SAVED&&SAVED.ts){dbWrite('session',SAVED)}
+            refreshGate();
+          });
+        });
+      }).catch(function(){});
+    }
+  }catch(e){}
+}
+
+/* ============ STEP HELPERS ============ */
+function stepMins(s){return s.t==='ex'?s.e.mins:s.e.total/60+(s.e.kind==='stretch'?.5:1)}
+function replan(){var c=0;sess.steps.forEach(function(s){s.mins=stepMins(s);s.plan=c;c+=s.mins});sess.total=c}
+function swapped(orig,sw){
+  if(!sw)return orig;
+  if(sw.indexOf('ex:')===0)return X(sw.slice(3),{sets:orig.sets,mins:orig.mins});
+  var m=Math.max(5,Math.round((orig.total||600)/60));
+  if(sw==='ti')return mkTimed(tInc(m));
+  if(sw==='tb')return mkTimed(tBike(m));
+  if(sw==='tw')return mkTimed(T.warmbike);
+  return orig;
+}
+function altOptions(s){
+  var o=s.orig,out=[],used=function(id){return sess.steps.some(function(x){return x!==s&&x.st!=='skipped'&&x.e.id===id})};
+  if(s.t==='ex'){
+    if(o.altId&&E[o.altId]&&!used(o.altId)&&s.e.id!==o.altId)out.push({sw:'ex:'+o.altId,label:'Swap to '+E[o.altId].name,note:'Works the same muscles. Setup steps and animation are included.'});
+  }else if(o.kind==='warm'){
+    if(s.sw!=='tw')out.push({sw:'tw',label:'Swap to bike warm-up',note:'6 minutes of easy spinning instead of the treadmill.'});
+  }else if(o.kind==='cardio'){
+    var m=Math.round(o.total/60);
+    if(s.sw!=='ti'&&o.anim!=='incline')out.push({sw:'ti',label:'Swap to incline treadmill walk',note:m+' minutes at a steady pace.'});
+    if(s.sw!=='tb'&&o.anim!=='bike')out.push({sw:'tb',label:'Swap to stationary bike',note:m+' minutes, steady with short pushes.'});
+  }
+  if(s.sw)out.push({sw:'',label:'Back to '+o.name,note:'Return to the original plan.'});
+  return out;
+}
+function nextTodo(){
+  var a=sess.steps,n=a.length,i;
+  for(i=sess.i+1;i<n;i++)if(a[i].st==='todo')return i;
+  for(i=0;i<n;i++)if(a[i].st==='todo'&&i!==sess.i)return i;
+  return -1;
+}
+function nextName(){var n=nextTodo();return n<0?'Last step of the day':'Next: '+sess.steps[n].e.name}
+
+/* ============ SESSION FLOW ============ */
+function mkSess(day){
+  var off=(G.off[day]||[]).slice(),steps=buildSteps(day,undefined,off);
+  sess={day:day,off:off,steps:steps,i:-1,stage:'brief',start:Date.now(),w:{},wl:{},setsDone:0,skipped:0,tm:null,rest:null};
+  sess.omitted=steps.omitted||[];replan();
+}
+function startClock(){
+  try{if(navigator.wakeLock)navigator.wakeLock.request('screen').catch(function(){})}catch(e){}
+  if(!clockT)clockT=setInterval(function(){
+    updClock();
+    if(sess&&sess.i>=0&&sess.stage!=='done'&&++hbN%20===0)saveSess(true);
+  },1000);
+}
+function startSession(){mkSess(G.day);startClock();render()}
+function resumeSession(){
+  var sv=activeSaved();if(!sv)return;
+  var base=buildSteps(sv.day,undefined,sv.off||[]),steps=[];
+  sv.steps.forEach(function(o){
+    var b=base[o.k];if(!b)return;b=Object.assign({},b);
+    b.sw=o.sw||'';b.e=swapped(b.orig,b.sw);b.st=o.st||'todo';b.prog=o.p||0;steps.push(b);
+  });
+  sess={day:sv.day,off:sv.off||[],steps:steps,i:Math.min(sv.i,steps.length-1),stage:'setup',start:sv.start,w:{},wl:sv.wl||{},setsDone:0,skipped:sv.skipped||0,tm:null,rest:null};
+  var gap=Date.now()-(sv.seen||Date.now());if(gap>120000)sess.start+=gap;
+  replan();startClock();
+  if(sess.steps[sess.i].st!=='todo'){var n=nextTodo();if(n<0){finish();return}sess.i=n}
+  enter(sess.i);
+}
+function enter(i){
+  var s=sess.steps[i];sess.i=i;sess.rest=null;sess.tm=null;
+  sess.stage=s.t==='ex'?(s.prog>0?'set':'setup'):'timed';
+  saveSess();render();window.scrollTo(0,0);
+}
+function advance(){var n=nextTodo();if(n<0)finish();else enter(n)}
+function finish(){
+  var done=sess.steps.filter(function(s){return s.st==='done'}).length;
+  sess.stage='done';sess.end=Date.now();sess.doneN=done;
+  MEM.log.push({d:ymd(),day:sess.day,m:Math.round((sess.end-sess.start)/60000),n:done,t:sess.steps.length});
+  MEM.log=MEM.log.slice(-60);saveMem();clearSess();
+  $('#ov').innerHTML='';render();window.scrollTo(0,0);
+}
+function updClock(){
+  var el=document.getElementById('clk');
+  if(el&&sess&&sess.i>=0&&sess.stage!=='done')el.textContent=fmtMin((Date.now()-sess.start)/1000);
+}
+function stopTick(){if(tick){clearInterval(tick);tick=0}}
+function unlockAudio(){
+  try{
+    var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;
+    audio=audio||new AC();
+    if(audio.state==='suspended'&&audio.resume)audio.resume();
+    if(!audio.__u){var b=audio.createBuffer(1,1,22050),src=audio.createBufferSource();src.buffer=b;src.connect(audio.destination);if(src.start)src.start(0);audio.__u=1}
+  }catch(e){}
+}
+function beep(n){
+  try{
+    audio=audio||new (window.AudioContext||window.webkitAudioContext)();
+    if(audio.state==='suspended'&&audio.resume)audio.resume();
+    for(var i=0;i<(n||1);i++){var o=audio.createOscillator(),g=audio.createGain();o.frequency.value=880;g.gain.value=.12;o.connect(g);g.connect(audio.destination);var st=audio.currentTime+i*.28;o.start(st);o.stop(st+.16);}
+  }catch(e){}
+  try{if(navigator.vibrate)navigator.vibrate(n>1?[120,80,120]:120)}catch(e){}
+}
+function startRest(len){sess.stage='rest';sess.rest={end:Date.now()+len*1000,len:len};saveSess(true);render()}
+function endRest(){stopTick();sess.rest=null;sess.stage='set';saveSess(true);render()}
+function timerElapsed(t){return t.acc+(t.run?Date.now()-t.start:0)}
+function tmToggle(){
+  var st=sess.steps[sess.i];
+  if(!sess.tm){sess.tm={ph:phases(st.e),acc:0,run:false,start:0,done:false,last:-1}}
+  var t=sess.tm;if(t.done)return;
+  if(t.run){t.acc+=Date.now()-t.start;t.run=false;stopTick()}
+  else{t.run=true;t.start=Date.now();beep(1);stopTick();tick=setInterval(tmTick,250)}
+  render();tmTick();
+}
+function tmTick(){
+  if(!sess||!sess.tm)return;
+  var t=sess.tm,el=timerElapsed(t)/1000,acc=0,idx=t.ph.length-1,rem=0,tot=0;
+  t.ph.forEach(function(p){tot+=p.s});
+  for(var i=0;i<t.ph.length;i++){if(el<acc+t.ph[i].s){idx=i;rem=acc+t.ph[i].s-el;break}acc+=t.ph[i].s}
+  var fin=el>=tot;
+  if(idx!==t.last){if(t.last>=0&&!fin){beep(1);toast(t.ph[idx].l)}t.last=idx}
+  if(fin){t.done=true;if(t.run){t.run=false;t.acc=tot*1000}stopTick();beep(3);render();return}
+  var big=document.getElementById('tb'),pl=document.getElementById('tp'),tt=document.getElementById('tt'),mt=document.getElementById('tmm');
+  if(big)big.textContent=mmss(rem);
+  if(pl)pl.textContent=t.ph[idx].l;
+  if(tt)tt.textContent=mmss(tot-el)+' left in total';
+  if(mt)mt.style.width=(100*el/tot)+'%';
+}
+function moveStep(i,dir){
+  var a=sess.steps,j=i+dir;
+  while(j>=0&&j<a.length&&a[j].st!=='todo')j+=dir;
+  if(j<0||j>=a.length)return;
+  var cur=a[sess.i],t=a[i];a[i]=a[j];a[j]=t;
+  sess.i=cur?a.indexOf(cur):-1;
+  replan();saveSess(true);$('#ov').innerHTML=planHTML();
+}
+function doLater(){
+  var a=sess.steps,s=a[sess.i],nxt=nextTodo(),nobj=nxt>=0?a[nxt]:null;
+  bump('later',s.e.id);
+  a.splice(sess.i,1);
+  var last=-1;a.forEach(function(x,k){if(x.sec===s.sec)last=k});
+  a.splice(last+1,0,s);
+  replan();
+  if(!nobj||nobj===s){sess.i=a.indexOf(s);toast('This is the only step left.');enter(sess.i);return}
+  toast('Moved to the end of '+s.sec.toLowerCase()+'.');
+  enter(a.indexOf(nobj));
+}
+function doSwap(sw){
+  var s=sess.steps[sess.i],fromId=s.e.id;
+  s.sw=sw||'';s.e=swapped(s.orig,s.sw);s.prog=0;bump('swap',fromId+'>'+s.e.id);
+  replan();toast(sw?'Swapped to '+s.e.name+'.':'Back to the original.');enter(sess.i);
+}
+
+/* ============ VIEWS ============ */
+function chip(t,c){return '<span class="chip '+(c||'')+'">'+t+'</span>'}
+function dayMins(di){return Math.round(buildSteps(di).total)}
+function weekDone(){var m=mondayYmd(),o={};MEM.log.forEach(function(x){if(x.d>=m)o[x.day]=1});return o}
+
+function planCardHTML(){
+  var d=DAYS[G.day];if(d.rest)return '';
+  var off=G.off[G.day]||[],miss=gymMissing();
+  var raw=buildSteps(G.day,[],[]),eff=buildSteps(G.day,undefined,off);
+  var rows='',last='';
+  raw.forEach(function(r){
+    var id=r.e.id,q=eqOf(r.e),isOff=off.indexOf(id)>=0,gm=!!q&&miss.indexOf(q)>=0,avail=!isOff&&!gm;
+    var kept=eff.filter(function(x){return x.e.id===id})[0];
+    var rp=kept?null:eff.filter(function(x){return x.rep===r.e.name})[0];
+    var sub;
+    if(kept)sub=r.t==='ex'?r.e.sets+' sets of '+r.e.reps:(r.e.kind==='stretch'?'No machine':Math.round(r.e.total/60)+' min');
+    else if(rp)sub='Replaced by '+rp.e.name;
+    else sub='No substitute, left out';
+    if(gm)sub='Not in My gym. '+sub;
+    var t=(kept||rp)?fmtMin((kept||rp).plan):'';
+    if(r.sec!==last){last=r.sec;rows+='<div class="psec">'+r.sec+'</div>'}
+    rows+='<button class="pr2'+(avail?' on':'')+(gm?' lock':'')+'" data-act="'+(gm?'gmnote':'dayoff')+'" data-id="'+id+'" aria-pressed="'+avail+'"><span class="bx">'+(avail?'✓':'')+'</span><span class="nm">'+r.e.name+'<small>'+sub+'</small></span><span class="tt2">'+t+'</span></button>';
+  });
+  var acts=off.length?'<div class="row" style="margin-top:10px;gap:16px"><button class="link" data-act="rememberoff">Remember unticked as not in my gym</button><button class="link" data-act="allon">Tick all</button></div>':'';
+  return '<div class="card"><h3 style="font-size:28px;margin-bottom:2px">'+d.short+' plan</h3><p class="mach" style="margin:0 0 4px">Tick what is available right now. Unticked machines are swapped or left out when you start. About '+Math.round(eff.total)+' min.</p>'+rows+acts+'</div>';
+}
+function snapForm(){
+  var n=document.getElementById('cn'),p=document.getElementById('cp'),t=document.getElementById('cnote');
+  if(n)G.cf.name=n.value;if(p)G.cf.pat=p.value;if(t)G.cf.note=t.value;
+}
+function customHTML(){
+  var c=(MEM.gym&&MEM.gym.custom)||[],f=G.cf;
+  var list=c.map(function(m){
+    return '<div class="prow"><div class="jump" style="cursor:default"><span class="dot">★</span><span><b>'+esc(m.name)+'</b><small>Works like: '+esc(patOf(m.pat)[1])+'. '+(m.days&&m.days.length?'On '+m.days.map(function(i){return DAYS[i].short}).join(', '):'Not added to any day')+'</small></span></div><button class="mv wide" data-act="cdel" data-id="'+m.id+'">Delete</button></div>';
+  }).join('');
+  var opts=PAT.map(function(p){return '<option value="'+p[0]+'"'+(f.pat===p[0]?' selected':'')+'>'+p[1]+'</option>'}).join('');
+  var dch=DAYS.slice(0,6).map(function(d,i){var on=f.days.indexOf(i)>=0;return '<button class="dchip'+(on?' on':'')+'" data-act="cday" data-i="'+i+'"><b>'+d.short+'</b></button>'}).join('');
+  return '<h3 class="gh">My own machines</h3><p class="mach" style="margin:0 0 8px">Machines your gym has that are not in the list above. They are saved and added to the days you choose.</p>'+list+
+   '<div class="card" style="margin-top:10px"><label class="lbl" for="cn">Machine name</label><input id="cn" class="txt" placeholder="e.g. Hammer Strength iso row" value="'+esc(f.name)+'" autocomplete="off">'+
+   '<label class="lbl" for="cp">It works like</label><select id="cp" class="txt">'+opts+'</select>'+
+   '<label class="lbl">Add to these days</label><div class="days" style="grid-template-columns:repeat(6,1fr);margin:0 0 4px">'+dch+'</div>'+
+   '<label class="lbl" for="cnote">Note (optional)</label><input id="cnote" class="txt" placeholder="e.g. seat 4, plate-loaded" value="'+esc(f.note)+'" autocomplete="off">'+
+   '<button class="btn big" style="margin-top:12px" data-act="cadd">Add this machine</button><p class="err" id="cerr"></p></div>';
+}
+function summaryText(){
+  var miss=G.gm||[],has=[],mi=[];
+  GEAR.forEach(function(g){g[1].forEach(function(it){(miss.indexOf(it[0])<0?has:mi).push(it[1])})});
+  var c=(MEM.gym&&MEM.gym.custom)||[];
+  return 'MY GYM\nHas: '+(has.join(', ')||'none')+'\nMissing: '+(mi.join(', ')||'none')+'\nOwn machines: '+(c.length?c.map(function(m){return m.name+' ('+patOf(m.pat)[1]+')'}).join('; '):'none');
+}
+function summaryHTML(){
+  return '<h3 class="gh">My gym data</h3><p class="mach" style="margin:0 0 6px">Saved to your account. Paste this to me in chat if you want me to tailor your plan further.</p><textarea class="txt" rows="7" readonly>'+esc(summaryText())+'</textarea>';
+}
+
+function iosHint(){
+  var P=platInfo();
+  if(!P.ios||P.standalone||(window.claude&&window.claude.use)||ls.get('ip:nohint')==='1')return '';
+  return '<div class="card" style="margin:0 0 14px;border-color:var(--ac)"><b>Install on your iPhone</b><p class="mach" style="margin:4px 0 6px">In Safari tap the <b>Share</b> button (square with an arrow), then <b>Add to Home Screen</b>. This keeps your data safe and opens the app full screen.</p><button class="link" data-act="hintx">Dismiss</button></div>';
+}
+function gateHTML(){
+  var d=DAYS[G.day],sv=activeSaved(),wk=weekDone(),wkN=Object.keys(wk).length;
+  var chips=DAYS.map(function(x,i){return '<button class="dchip'+(i===G.day?' on':'')+(i===todayIdx?' today':'')+'" data-act="pick" data-i="'+i+'"><b>'+x.short+'</b><small>'+x.tag+'</small>'+(wk[i]?'<em class="ck" aria-label="Done this week">✓</em>':'')+'</button>'}).join('');
+  var resume='';
+  if(sv){
+    resume='<div class="card resume"><h3>Session in progress</h3><p>'+DAYS[sv.day].title+'. You left off at <b>'+sv.nm+'</b>. '+sv.dn+' of '+sv.tt+' steps done.</p><button class="btn big" data-act="resume">Continue where I left off</button><button class="link" data-act="discard">'+(G.disc?'Tap again to discard this session':'Discard this session')+'</button></div>';
+  }
+  var card;
+  if(d.rest){
+    card='<div class="card dcard"><h2>'+d.title+'</h2><p>'+d.why+'</p><p style="margin-top:12px">Feeling energetic? Pick a day above to train anyway, but a full rest day helps you grow.</p></div>';
+  }else{
+    var n=d.ex.length+(d.fin?1:(d.extra?3:0));
+    card='<div class="card dcard"><h2>'+d.title+'</h2><p>'+d.why+'</p><div class="meta">'+chip('About '+Math.round(buildSteps(G.day,undefined,G.off[G.day]||[]).total)+' min')+chip(n+' machines')+chip(d.str.length+' stretches')+(G.day===todayIdx?chip('Today','ok'):'')+'</div></div>'+planCardHTML()+
+    '<div class="card code"><label for="cw">'+(sv&&sv.day===G.day?'Type the codeword to continue this session':'Type the codeword to start your session')+'</label><div class="row"><input id="cw" value="'+esc(G.cw||'')+'" class="inp'+(G.err?' bad':'')+'" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="codeword"><button class="btn" data-act="unlock">Start</button></div><p class="err" id="er">'+(G.err?'That is not the codeword. Try again.':'')+'</p>'+
+    (G.hint?'<p class="hint">The codeword is <b>LETSGO</b>.</p>':'<button class="link" data-act="hint">Show me the codeword</button>')+'</div>';
+  }
+  var hist='';
+  if(MEM.log.length){
+    var rows=MEM.log.slice(-5).reverse().map(function(x){var dd=DAYS[x.day]||{title:'Session'};return '<li><span class="tt">'+fmtDate(x.d)+'</span><span class="nm">'+dd.title+'<small>'+x.n+' of '+x.t+' steps done</small></span><span class="mn">'+x.m+' min</span></li>'}).join('');
+    hist='<div class="card"><h3 style="font-size:26px;margin-bottom:4px">Your progress</h3><p class="mach" style="margin-bottom:8px">This week: '+wkN+' of 6 sessions. Total sessions: '+MEM.log.length+'.</p><div class="meter" style="margin:0 0 8px"><i style="width:'+Math.min(100,wkN/6*100)+'%"></i></div><ul class="tl-list">'+rows+'</ul></div>';
+  }
+  var nm=gymMissing().length;
+  var gymCard='<div class="card gymc"><div><b>'+(MEM.gym?'My gym':'Tell me what your gym has')+'</b><small>'+(MEM.gym?(nm?nm+' machine'+(nm>1?'s':'')+' marked as missing. The plan is adjusted.':'Everything ticked. No substitutions needed.'):'Tick what is available and the plan rebuilds itself with substitutes.')+'</small></div><button class="btn'+(MEM.gym?' alt':'')+'" data-act="gym">'+(MEM.gym?'Edit':'Set up')+'</button></div>';
+  var noStore=(!LSOK&&!(window.claude&&window.claude.use))?'<div class="safe" style="margin:0 0 14px"><b>This browser is not saving your data.</b> Progress will be lost when you close the page. Open the file in Chrome, or ask the sender for an online link.</div>':'';
+  return '<div class="wrap"><div class="brand">Iron Plan</div><p class="sub">Six machine days a week for a bigger back, stronger glutes and more stamina. Progress saves automatically.'+((window.claude&&window.claude.use)?'':' Data stays on this phone only, so back it up from Share a report.')+'</p><div class="days">'+chips+'</div>'+noStore+iosHint()+resume+(MEM.gym?'':gymCard)+card+(MEM.gym?gymCard:'')+'<div class="card gymc"><div><b>Share a report</b><small>Download your data to help improve the app.</small></div><button class="btn alt" data-act="report">Open</button></div>'+'<div class="card gymc"><div><b>Check this device</b><small>Tests saving, sound and screen on your phone.</small></div><button class="btn alt" data-act="device">Run</button></div>'+hist+'</div>';
+}
+function topbar(){
+  var d=DAYS[sess.day],n=sess.steps.length,dn=sess.steps.filter(function(s){return s.st!=='todo'}).length,pct=sess.i<0?0:Math.min(100,100*dn/n);
+  return '<header class="top"><div class="tl"><b>'+d.short+'</b>'+d.title+'</div><span class="svd" id="sv"></span><div class="clock" id="clk">'+(sess.i<0?'0:00':fmtMin((Date.now()-sess.start)/1000))+'</div><button class="ghost" data-act="plan">Plan</button></header><div class="prog"><i style="width:'+pct+'%"></i></div>';
+}
+function briefHTML(){
+  var d=DAYS[sess.day],rows=sess.steps.map(function(s){return '<li><span class="tt">'+fmtMin(s.plan)+'</span><span class="nm">'+s.e.name+'<small>'+(s.t==='ex'?s.e.sets+' sets of '+s.e.reps:s.e.kind==='stretch'?'Stretch, no machine':s.e.machine.split(':')[0].split('.')[0])+'</small></span><span class="mn">'+Math.round(s.mins)+' min</span></li>'}).join('');
+  return topbar()+'<div class="wrap" style="padding-top:8px"><h2 class="ex" style="margin-top:6px">'+d.title+'</h2><p class="mach">Planned time: about '+Math.round(sess.total)+' minutes. Times on the left are when each block should start.</p>'+
+  '<div class="card"><ul class="tl-list">'+rows+'</ul></div>'+((sess.omitted&&sess.omitted.length)?'<div class="tip"><b>Left out today (no equipment or substitute):</b> '+sess.omitted.join(', ')+'.</div>':'')+
+  '<div class="card"><h3 style="font-size:26px;margin-bottom:8px">Ground rules</h3><ul style="margin:0;padding-left:20px"><li style="margin-bottom:8px">Pick a weight where the last 2 reps feel hard but your form stays clean. Add weight only after you complete every rep of every set.</li><li style="margin-bottom:8px">Machine busy or missing? Tap “Busy or missing?” during any exercise to do it later, swap it, or skip it. Use “Plan” to reorder.</li><li>Your progress saves automatically. If you close the app, open it again and tap Continue.</li></ul></div>'+
+  '<div class="safe"><b>Back safety:</b> dull muscle burn is normal. Stop the set if you feel sharp, pinching or shooting pain, or numbness or tingling in a leg. Tell your doctor or physio if it keeps happening.</div></div>'+
+  '<div class="bar-b"><div class="in"><button class="btn big" data-act="begin">Start warm-up</button></div></div>';
+}
+function sched(st){
+  var d=(Date.now()-sess.start)/60000-st.plan;
+  if(Math.abs(d)<1.5)return chip('On schedule','ok');
+  return d>0?chip(Math.round(d)+' min behind plan','late'):chip(Math.round(-d)+' min ahead','ok');
+}
+function accord(title,items,open,ul){
+  var tag=ul?'ul':'ol';
+  return '<details'+(open?' open':'')+'><summary>'+title+'</summary><'+tag+'>'+items.map(function(x){return '<li>'+x+'</li>'}).join('')+'</'+tag+'></details>';
+}
+function wtHTML(w,lastTxt){
+  return '<div class="wt" style="margin-top:12px"><button data-act="wt" data-d="-2.5" aria-label="Less weight">–</button><input id="wti" type="number" inputmode="decimal" step="0.5" value="'+w+'" placeholder="kg" aria-label="Weight in kg"><button data-act="wt" data-d="2.5" aria-label="More weight">+</button><small>kg</small></div>'+(lastTxt?'<p class="hint" style="margin:6px 0 0">Last time: '+lastTxt+'</p>':'');
+}
+function exHTML(st){
+  var e=st.e,stage=sess.stage,prog=st.prog||0,cur=prog+1;
+  var wl=sess.wl[e.id]||[],mem=MEM.w[e.id];
+  var w=wl.length?wl[wl.length-1]:(mem&&mem.ws&&mem.ws.length?mem.ws[mem.ws.length-1]:'');
+  var lastTxt=mem&&mem.ws&&mem.ws.length?mem.ws.join(', ')+' kg'+(mem.d?' ('+fmtDate(mem.d)+')':''):'';
+  var pills='';for(var k=1;k<=e.sets;k++){var cls=k<=prog?'done':(k===cur?'cur':'');pills+='<div class="pill '+cls+'">'+(cls==='done'?'✓':k)+'</div>'}
+  var exN=sess.steps.filter(function(s){return s.t==='ex'}),exI=exN.indexOf(st)+1;
+  var block,bar,busy='<button class="btn alt" data-act="busy">Busy or missing?</button>';
+  if(stage==='setup'){
+    block='<div class="tip"><b>Set up the machine first.</b> Go through the steps below. Tap the button when you are seated and ready.</div>'+accord('Machine setup: the small details',e.setup,true)+accord('How to do it',e.how,false)+accord('Mistakes to avoid',e.avoid,false,true);
+    bar=busy+'<button class="btn" data-act="go">I am set up. Start set '+cur+'</button>';
+  }else if(stage==='rest'){
+    block='<div class="card rest"><div class="rb" id="rb">'+mmss((sess.rest.end-Date.now())/1000)+'</div><p>Rest. Breathe slowly and sip water.</p><div class="meter"><i id="rm"></i></div><p style="margin-top:10px"><b>Up next:</b> set '+cur+' of '+e.sets+'. Same weight, or a little heavier if the last set felt easy.</p></div>'+wtHTML(w,'')+accord('Quick reminder: how to do it',e.how,false);
+    bar='<button class="btn alt" data-act="plus15">+15 s</button><button class="btn" data-act="skiprest">Skip rest, start set '+cur+'</button>';
+  }else{
+    block='<div class="card setbox"><div class="target"><div class="big">'+e.reps+' <span>reps</span></div><span>Tempo: '+e.tempo+'</span></div>'+wtHTML(w,lastTxt)+'</div>'+accord('How to do it',e.how,true)+accord('Machine setup',e.setup,false)+accord('Mistakes to avoid',e.avoid,false,true);
+    bar=busy+'<button class="btn ok" data-act="setdone">Set '+cur+' done ✓</button>';
+  }
+  return topbar()+'<div class="wrap" style="padding-top:6px"><div class="sec">'+chip(st.sec+' '+exI+' of '+exN.length)+sched(st)+chip('Plan: '+Math.round(st.mins)+' min')+(st.sw?chip('Swapped in','ok'):'')+(st.rep?chip('Replaces '+st.rep,'ok'):'')+'</div>'+
+    figureHTML(e.anim)+
+    '<h2 class="ex">'+e.name+'</h2><p class="mach">'+e.machine+'</p><div class="tags">'+chip(e.muscle)+'</div>'+
+    '<a class="photo" href="'+photo(e.q)+'" target="_blank" rel="noopener">See real photos of this machine (Google Images)</a>'+
+    '<p class="alt-line">Machine busy? Swap in: '+e.alt+'.</p>'+
+    '<div class="pills" style="margin:14px 0 4px">'+pills+'</div>'+block+'<div class="tip"><b>Tip:</b> '+e.tip+'</div>'+
+    '<p class="hint" style="margin-top:14px">'+nextName()+'</p></div><div class="bar-b"><div class="in">'+bar+'</div></div>';
+}
+function timedHTML(st){
+  var e=st.e,tm=sess.tm,run=tm&&tm.run,done=tm&&tm.done;
+  var ph=tm?tm.ph:phases(e),tot=0;ph.forEach(function(p){tot+=p.s});
+  var el=tm?timerElapsed(tm)/1000:0,acc=0,idx=ph.length-1,rem=ph[0].s;
+  if(done){idx=ph.length-1;rem=0}else{for(var i=0;i<ph.length;i++){if(el<acc+ph[i].s){idx=i;rem=acc+ph[i].s-el;break}acc+=ph[i].s}}
+  var label=done?'Finished. Nice work.':ph[idx].l;
+  var nx=nextTodo(),isStr=e.kind==='stretch';
+  var main=done?'<button class="btn ok" data-act="nextstep">'+(nx<0?'Finish session':'Next: '+sess.steps[nx].e.name)+'</button>':'<button class="btn" data-act="tm">'+(run?'Pause':(tm&&el>0?'Resume':'Start timer'))+'</button>';
+  var left=done?'':(isStr?'<button class="btn alt" data-act="skiptoday">Skip</button>':'<button class="btn alt" data-act="busy">Busy or missing?</button>');
+  var photoLink='<a class="photo" href="'+photo(e.q)+'" target="_blank" rel="noopener">See '+(isStr?'photos of this stretch':'real photos of this machine')+' (Google Images)</a>';
+  return topbar()+'<div class="wrap" style="padding-top:6px"><div class="sec">'+chip(st.sec)+sched(st)+chip('Plan: '+Math.round(st.mins)+' min')+(st.sw?chip('Swapped in','ok'):'')+(st.rep?chip('Replaces '+st.rep,'ok'):'')+'</div>'+
+    figureHTML(e.anim)+
+    '<h2 class="ex">'+e.name+'</h2><p class="mach">'+e.machine+'</p>'+photoLink+
+    '<div class="card tm"><div class="tb" id="tb">'+mmss(rem)+'</div><div class="pl" id="tp">'+label+'</div><div class="meter"><i id="tmm" style="width:'+(tot?100*el/tot:0)+'%"></i></div><small id="tt">'+mmss(tot-el)+' left in total</small></div>'+
+    accord(isStr?'Get into position':'Machine setup',e.setup,!tm)+accord('How to do it',e.how,!!tm)+accord('Mistakes to avoid',e.avoid,false,true)+
+    '<div class="tip"><b>Tip:</b> '+e.tip+'</div><p class="hint" style="margin-top:14px">'+nextName()+'</p></div>'+
+    '<div class="bar-b"><div class="in">'+left+main+'</div></div>';
+}
+function finHTML(){
+  var d=DAYS[sess.day],mins=Math.round((sess.end-sess.start)/60000);
+  return '<div class="wrap fin"><div class="brand" style="margin-top:30px">Done.</div><p class="sub">'+d.title+' is saved to your history. One more session banked toward your goals.</p>'+
+   '<div class="stat"><div><b>'+mins+'</b><span>minutes (plan: '+Math.round(sess.total)+')</span></div><div><b>'+sess.doneN+'/'+sess.steps.length+'</b><span>steps done</span></div><div><b>'+MEM.log.length+'</b><span>sessions logged</span></div><div><b>'+sess.steps.filter(function(s){return s.st==='skipped'}).length+'</b><span>steps skipped</span></div></div>'+
+   '<div class="card"><h3 style="font-size:26px;margin-bottom:6px">Recovery checklist</h3><ul style="margin:0;padding-left:20px"><li style="margin-bottom:6px">Drink water and eat a meal with protein within a couple of hours.</li><li style="margin-bottom:6px">Walk a little, avoid sitting for long stretches tonight.</li><li>Sleep 7–9 hours. That is when you grow.</li></ul></div>'+
+   '<div style="margin-top:14px"><button class="btn big" data-act="home">Back to the week</button></div></div>';
+}
+function planHTML(){
+  var rows=sess.steps.map(function(s,i){
+    var mark=s.st==='done'?'✓':s.st==='skipped'?'–':(i+1);
+    var sub=s.st==='done'?'Done':s.st==='skipped'?'Skipped':(s.prog>0?s.prog+' of '+s.e.sets+' sets done, ':'')+Math.round(s.mins)+' min';
+    var cls='jump'+(i===sess.i?' cur':'')+(s.st==='done'?' d':'')+(s.st==='skipped'?' sk':'');
+    var ctl=s.st==='todo'?'<button class="mv" data-act="mv" data-i="'+i+'" data-d="-1" aria-label="Move up">▲</button><button class="mv" data-act="mv" data-i="'+i+'" data-d="1" aria-label="Move down">▼</button>':'<button class="mv wide" data-act="redo" data-i="'+i+'">Redo</button>';
+    return '<div class="prow"><button class="'+cls+'" data-act="jump" data-i="'+i+'"><span class="dot">'+mark+'</span><span><b>'+s.e.name+'</b><small>'+sub+'</small></span></button>'+ctl+'</div>';
+  }).join('');
+  return '<div class="ov" data-act="closeov"><div class="sheet"><h3>Today’s plan</h3><p class="mach" style="margin-bottom:6px">Tap a step to do it now. Use the arrows to change the order.</p>'+rows+
+    '<button class="btn alt big" style="margin-top:12px" data-act="closeov">Close</button><button class="btn alt big" style="margin-top:8px" data-act="exit">Save and exit (continue later)</button><button class="link" style="margin-top:8px" data-act="endnow">Finish session now</button></div></div>';
+}
+function busyHTML(){
+  var s=sess.steps[sess.i],opts=altOptions(s);
+  var h='<div class="ov" data-act="closeov"><div class="sheet"><h3>Busy or missing?</h3><p class="mach">'+s.e.name+'. Pick what you want to do:</p>';
+  h+='<button class="opt" data-act="later"><b>Do this one last</b><small>Moves it to the end of this section and takes you to the next exercise.</small></button>';
+  opts.forEach(function(o){h+='<button class="opt" data-act="swap" data-sw="'+o.sw+'"><b>'+o.label+'</b><small>'+o.note+'</small></button>'});
+  h+='<button class="opt" data-act="skiptoday"><b>Skip it today</b><small>Marks it skipped. You can bring it back from the Plan.</small></button>';
+  if(s.orig.alt)h+='<p class="hint">Another option at the gym: '+s.orig.alt+'.</p>';
+  var others=sess.steps.map(function(x,i){return x.st==='todo'&&i!==sess.i?'<button class="jump" data-act="jump" data-i="'+i+'"><span class="dot">'+(i+1)+'</span><span><b>'+x.e.name+'</b><small>'+Math.round(x.mins)+' min</small></span></button>':''}).join('');
+  if(others)h+='<h3 style="font-size:24px;margin-top:16px">Or do another one right now</h3>'+others;
+  return h+'<button class="btn alt big" style="margin-top:14px" data-act="closeov">Close</button></div></div>';
+}
+
+
+function gymHTML(){
+  var miss=G.gm||[];
+  var groups=GEAR.map(function(g){
+    return '<h3 class="gh">'+g[0]+'</h3>'+g[1].map(function(it){
+      var has=miss.indexOf(it[0])<0;
+      return '<button class="gear'+(has?' on':'')+'" data-act="gear" data-id="'+it[0]+'" aria-pressed="'+has+'"><span class="bx">'+(has?'✓':'')+'</span><span>'+it[1]+'</span></button>';
+    }).join('');
+  }).join('');
+  var pv=gymPreview(miss),pvh='';
+  if(pv.length){pvh='<div class="card" style="margin-top:14px"><h3 style="font-size:24px;margin-bottom:6px">What changes in your plan</h3>'+pv.map(function(x){return '<p style="margin:6px 0"><b>'+x.d+':</b> '+x.p.join('; ')+'</p>'}).join('')+'</div>'}
+  else pvh='<div class="tip">Everything is ticked, so no substitutions are needed.</div>';
+  return '<div class="wrap" style="padding-top:12px"><div class="brand" style="font-size:44px;margin-top:6px">My gym</div><p class="sub" style="margin-bottom:10px">Tick everything your gym <b>has</b>. Untick what is missing. Substitutes use cables, a Smith machine or the floor when a machine is not there.</p><div class="row" style="margin-bottom:6px"><button class="ghost" data-act="gearall">Tick all</button></div>'+groups+customHTML()+pvh+summaryHTML()+'</div>'+
+  '<div class="bar-b"><div class="in"><button class="btn alt" data-act="gymcancel">Cancel</button><button class="btn" data-act="gymsave">Save my gym</button></div></div>';
+}
+
+
+/* ============ SHARE A REPORT ============ */
+var APPV=5;
+function nameOf(id,hideCustom){
+  if(E[id])return E[id].name;
+  if(id.indexOf('c_')===0){
+    if(hideCustom)return 'Custom machine';
+    var c=((MEM.gym&&MEM.gym.custom)||[]).filter(function(x){return 'c_'+x.id===id})[0];return c?c.name:'Custom machine';
+  }
+  if(S[id])return S[id].name;
+  if(id==='warm')return T.warm.name;if(id==='warmbike')return T.warmbike.name;if(id==='tint')return TINT.name;if(id==='row')return TROW.name;
+  if(/^inc\d/.test(id))return 'Incline treadmill walk';if(/^bike\d/.test(id))return 'Stationary bike';
+  return id;
+}
+function topList(obj,hide,n){
+  return Object.keys(obj||{}).map(function(k){return [k,obj[k]]}).sort(function(a,b){return b[1]-a[1]}).slice(0,n||10).map(function(p){
+    if(p[0].indexOf('>')>0){var q=p[0].split('>');return {what:nameOf(q[0],hide)+' → '+nameOf(q[1],hide),n:p[1]}}
+    return {what:nameOf(p[0],hide),n:p[1]};
+  });
+}
+function reportData(){
+  var R=G.rep,o={app:'Iron Plan',version:APPV,generated:new Date().toISOString().slice(0,10),includes:[]};
+  if(R.gym){
+    o.includes.push('gym');
+    var has=[],mi=[],miss=gymMissing();
+    GEAR.forEach(function(g){g[1].forEach(function(it){(miss.indexOf(it[0])<0?has:mi).push(it[1])})});
+    o.gym={has:has,missing:mi,ownMachines:((MEM.gym&&MEM.gym.custom)||[]).map(function(m){return {name:m.name,worksLike:patOf(m.pat)[1],days:(m.days||[]).map(function(i){return DAYS[i].short}),note:m.note||''}})};
+  }
+  if(R.hist){
+    o.includes.push('history');
+    o.sessions=MEM.log.map(function(x){return {date:x.d,day:(DAYS[x.day]||{}).title||'',minutes:x.m,stepsDone:x.n,stepsTotal:x.t}});
+    o.weightsKg={};Object.keys(MEM.w).forEach(function(k){o.weightsKg[nameOf(k,!R.gym)]={date:MEM.w[k].d,sets:MEM.w[k].ws}});
+  }
+  if(R.use){
+    o.includes.push('usage');
+    var h=!R.gym;
+    o.usage={completed:topList(MEM.stats.done,h,12),skipped:topList(MEM.stats.skipped,h),movedToEnd:topList(MEM.stats.later,h),swaps:topList(MEM.stats.swap,h),
+      device:{browser:(navigator.userAgent||'').slice(0,160),screen:(window.innerWidth||0)+'x'+(window.innerHeight||0),platform:platInfo().label+(platInfo().ver?' iOS '+platInfo().ver:''),installedAsApp:platInfo().standalone}};
+  }
+  if((R.fb||'').trim()){o.includes.push('feedback');o.feedback=R.fb.trim()}
+  return o;
+}
+function reportText(){
+  var d=reportData(),L=['IRON PLAN REPORT','Generated: '+fmtDate(d.generated)+' ('+d.generated+')','App version: '+d.version,'Includes: '+(d.includes.join(', ')||'nothing selected'),''];
+  if(d.gym){
+    L.push('GYM SETUP','Has: '+(d.gym.has.join(', ')||'none'),'Missing: '+(d.gym.missing.join(', ')||'none'));
+    L.push('Own machines: '+(d.gym.ownMachines.length?d.gym.ownMachines.map(function(m){return m.name+' (works like: '+m.worksLike+(m.days.length?'; days: '+m.days.join(', '):'')+(m.note?'; note: '+m.note:'')+')'}).join(' | '):'none'),'');
+  }
+  if(d.sessions){
+    L.push('WORKOUT HISTORY','Sessions logged: '+d.sessions.length);
+    d.sessions.slice(-15).forEach(function(x){L.push('- '+x.date+' | '+x.day+' | '+x.minutes+' min | '+x.stepsDone+'/'+x.stepsTotal+' steps')});
+    L.push('Weights (last logged, kg):');
+    var wk=Object.keys(d.weightsKg);
+    if(!wk.length)L.push('- none yet');
+    wk.forEach(function(k){L.push('- '+k+': '+d.weightsKg[k].sets.join(', ')+' ('+d.weightsKg[k].date+')')});
+    L.push('');
+  }
+  if(d.usage){
+    var fmt=function(a){return a.length?a.map(function(x){return x.what+' x'+x.n}).join('; '):'none yet'};
+    L.push('USAGE','Completed most: '+fmt(d.usage.completed),'Skipped: '+fmt(d.usage.skipped),'Moved to end (machine busy): '+fmt(d.usage.movedToEnd),'Swaps: '+fmt(d.usage.swaps),'Device: '+d.usage.device.platform+(d.usage.device.installedAsApp?' (installed app)':' (browser)'),'Screen: '+d.usage.device.screen,'Browser: '+d.usage.device.browser,'');
+  }
+  if(d.feedback)L.push('FEEDBACK',d.feedback,'');
+  return L.join('\n');
+}
+function reportHTML(){
+  var R=G.rep;
+  function tg(k,t,sub){return '<button class="gear'+(R[k]?' on':'')+'" data-act="rtog" data-k="'+k+'" aria-pressed="'+!!R[k]+'"><span class="bx">'+(R[k]?'✓':'')+'</span><span>'+t+'<small style="display:block;color:var(--mu);font-weight:500;font-size:13px">'+sub+'</small></span></button>'}
+  return '<div class="wrap" style="padding-top:12px"><div class="brand" style="font-size:44px;margin-top:6px">Share a report</div><p class="sub" style="margin-bottom:10px">Download a report and send it to the person improving the app. It has no name, email or account ID, and you choose what goes in.</p>'+
+   tg('gym','Gym setup','Machines you have, are missing, and your own machines')+
+   tg('hist','Workout history and weights','Sessions, minutes and the weights you logged')+
+   tg('use','Usage and phone type','Which steps you skip, swap or move, plus browser and screen size')+
+   '<label class="lbl" for="fb">What should be improved? (optional)</label><textarea id="fb" class="txt" rows="3" placeholder="e.g. rest timer too short, a missing exercise, a confusing screen">'+esc(R.fb)+'</textarea>'+
+   '<label class="lbl" for="rp">Report preview</label><textarea id="rp" class="txt" rows="13" readonly>'+esc(reportText())+'</textarea>'+
+   '<div class="stack"><button class="btn big" data-act="repdl">Download report (.txt)</button><button class="btn alt big" data-act="repjson">Download data (.json)</button><button class="btn alt big" data-act="repcopy">Copy report text</button></div>'+
+   '<h3 class="gh" style="margin-top:22px">Back up and restore</h3><p class="mach" style="margin:0 0 8px">Your data is saved in this browser. Make a backup file before changing phones or clearing browser data.</p><div class="stack"><button class="btn alt big" data-act="repbackup">Back up my data (.json)</button><label class="btn alt big" for="rf" style="display:block;text-align:center">Restore from a backup</label><input id="rf" type="file" accept=".json,application/json" style="display:none"></div></div>'+
+   '<div class="bar-b"><div class="in"><button class="btn alt" data-act="repback">Back</button></div></div>';
+}
+function repFallback(){toast('Download is not available here. Copy the text from the preview instead.');var rp=document.getElementById('rp');if(rp){rp.focus();rp.select()}}
+function backupData(){return {app:'Iron Plan backup',version:APPV,saved:new Date().toISOString(),mem:MEM,session:(SAVED&&SAVED.active)?SAVED:null}}
+function anchorDownload(name,data,mime){
+  try{
+    var b=new Blob([data],{type:mime||'text/plain'}),u=URL.createObjectURL(b),a=document.createElement('a');
+    a.href=u;a.download=name;a.style.display='none';document.body.appendChild(a);a.click();
+    setTimeout(function(){try{document.body.removeChild(a);URL.revokeObjectURL(u)}catch(e){}},1500);
+    toast('Saved to your downloads: '+name);return true;
+  }catch(e){return false}
+}
+function localDownload(name,data,mime){
+  try{
+    if(platInfo().ios&&navigator.canShare&&navigator.share&&typeof File==='function'){
+      var f=new File([data],name,{type:mime||'text/plain'});
+      if(navigator.canShare({files:[f]})){
+        navigator.share({files:[f],title:name}).then(function(){toast('Done.')}).catch(function(e){if(e&&e.name==='AbortError')return;anchorDownload(name,data,mime)});
+        return true;
+      }
+    }
+  }catch(e){}
+  return anchorDownload(name,data,mime);
+}
+function saveReport(kind){
+  var fb=document.getElementById('fb');if(fb)G.rep.fb=fb.value;
+  var data,name,mime='text/plain';
+  if(kind==='json'){data=JSON.stringify(reportData(),null,2);name='iron-plan-report-'+ymd()+'.json';mime='application/json'}
+  else if(kind==='backup'){data=JSON.stringify(backupData(),null,2);name='iron-plan-backup-'+ymd()+'.json';mime='application/json'}
+  else{data=reportText();name='iron-plan-report-'+ymd()+'.txt'}
+  try{
+    if(window.claude&&window.claude.use){
+      window.claude.use('downloads').then(function(dl){
+        if(!dl){if(!localDownload(name,data,mime))repFallback();return}
+        return dl.save({filename:name,data:data}).then(function(){toast('Saved.')}).catch(function(e){if(e&&e.code==='declined')return;repFallback()});
+      }).catch(repFallback);
+      return;
+    }
+  }catch(e){}
+  if(!localDownload(name,data,mime))repFallback();
+}
+function copyReport(){
+  var fb=document.getElementById('fb');if(fb)G.rep.fb=fb.value;
+  var sel=function(){var rp=document.getElementById('rp');if(rp){rp.focus();rp.select()}toast('Select and copy the text in the preview.')};
+  try{navigator.clipboard.writeText(reportText()).then(function(){toast('Copied. Paste it into a message.')}).catch(sel)}catch(e){sel()}
+}
+
+
+/* ============ DEVICE CHECK ============ */
+function platInfo(){
+  var ua=navigator.userAgent||'',ios=/iPhone|iPad|iPod/.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  var m=ua.match(/OS (\d+)[_.](\d+)/),android=/Android/.test(ua);
+  var sa=!!navigator.standalone||!!(window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches);
+  var label=ios?(/iPad/.test(ua)?'iPad':'iPhone'):android?'Android phone':'Computer or other device';
+  return {ios:ios,android:android,ver:(ios&&m)?m[1]+'.'+m[2]:'',standalone:sa,label:label};
+}
+function safeAreas(){
+  try{
+    var el=document.createElement('div');el.style.cssText='position:fixed;left:0;top:0;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);visibility:hidden;pointer-events:none';
+    document.body.appendChild(el);var cs=getComputedStyle(el),r=[cs.paddingTop,cs.paddingBottom];document.body.removeChild(el);return r;
+  }catch(e){return ['?','?']}
+}
+function runChecks(){
+  var R=[],P=platInfo(),rows=function(st,t,d){R.push({st:st,t:t,d:d})};
+  rows('info','Device',P.label+(P.ver?' on iOS '+P.ver:''));
+  if(P.ios&&parseFloat(P.ver)&&parseFloat(P.ver)<15)rows('warn','iOS version','This app works best on iOS 15 or newer. Update iOS if something looks wrong.');
+  rows(P.standalone?'ok':(P.ios&&!(window.claude&&window.claude.use)?'warn':'info'),'Opened as an app',P.standalone?'Yes, running full screen as an installed app.':(P.ios?'No, it is open in the browser. In Safari tap Share, then Add to Home Screen. Safari can erase website data after about 7 days if the app is not installed.':'Running in a browser tab.'));
+  var ok=false;try{localStorage.setItem('ip:t','1');ok=localStorage.getItem('ip:t')==='1';localStorage.removeItem('ip:t')}catch(e){}
+  rows(ok?'ok':'bad','Saving progress',ok?'Your progress and weights can be saved here.':'This browser blocks saving. Progress will be lost when you close the page.');
+  var AC=window.AudioContext||window.webkitAudioContext;
+  rows(AC?'ok':'bad','Sound',AC?'Available. Tap the button below. If you hear nothing, turn off silent mode (switch on the side of the iPhone) and raise the volume.':'Not available. The app will show banners instead of beeps.');
+  rows(navigator.vibrate?'ok':'info','Vibration',navigator.vibrate?'Supported.':'Not supported here (normal on iPhone). The app shows a banner when a rest ends.');
+  rows(navigator.wakeLock?'ok':'warn','Screen stays on',navigator.wakeLock?'Supported. The app asks the screen to stay on during a session.':'Not supported on this version. Set Auto-Lock to Never during workouts (Settings, Display and Brightness).');
+  var share=false;try{share=!!(navigator.canShare&&typeof File==='function'&&navigator.canShare({files:[new File(['x'],'t.txt',{type:'text/plain'})]}))}catch(e){}
+  rows(share?'ok':'warn','Saving reports and backups',share?'The share sheet is available (Save to Files, WhatsApp, Mail).':'No share sheet. Reports will download as files, or you can copy the text instead.');
+  rows(navigator.clipboard&&navigator.clipboard.writeText?'ok':'warn','Copy text',navigator.clipboard&&navigator.clipboard.writeText?'Supported.':'Not available. Use the select-and-copy text box instead.');
+  var fonts=false;try{fonts=!!(document.fonts&&document.fonts.check('700 20px "Big Shoulders Display"'))}catch(e){}
+  rows(fonts?'ok':'info','Fonts',fonts?'App fonts loaded.':'Using your phone’s system fonts (normal when offline).');
+  var sa=safeAreas();
+  rows('info','Screen',(window.innerWidth||0)+' x '+(window.innerHeight||0)+' at '+(window.devicePixelRatio||1)+'x. Safe area top '+sa[0]+', bottom '+sa[1]+'.');
+  rows('info','Appearance',(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'Dark mode':'Light mode');
+  var sw='serviceWorker' in navigator;
+  rows(sw&&navigator.serviceWorker.controller?'ok':'info','Works offline',sw?(navigator.serviceWorker.controller?'Yes, the app is cached for offline use.':'Not yet. It becomes available after the first visit when the app is hosted and installed.'):'Not supported in this view.');
+  rows('info','Animation speed','Measuring…');
+  G.dc=R;
+  var n=0,t0=null;
+  function fr(ts){
+    if(t0===null)t0=ts;n++;
+    if(ts-t0<1000){requestAnimationFrame(fr);return}
+    var fps=Math.round(n*1000/(ts-t0)),r=G.dc[G.dc.length-1];
+    r.st=fps>=40?'ok':(fps>=20?'warn':'bad');r.d=fps+' frames per second'+(fps>=40?'. Smooth.':(fps>=20?'. A little choppy.':'. Choppy. Close other apps and try again.'));
+    if(G.screen==='device'&&!sess){var y=window.pageYOffset;render();window.scrollTo(0,y)}
+  }
+  requestAnimationFrame(fr);
+}
+function dcText(){
+  var ic={ok:'OK',warn:'CHECK',bad:'FAIL',info:'INFO'};
+  return 'IRON PLAN DEVICE CHECK\n'+(G.dc||[]).map(function(r){return '['+ic[r.st]+'] '+r.t+': '+r.d}).join('\n')+'\nBrowser: '+(navigator.userAgent||'');
+}
+function deviceHTML(){
+  var ic={ok:'✓',warn:'!',bad:'✕',info:'i'};
+  var rows=(G.dc||[]).map(function(r){return '<div class="dcr '+r.st+'"><span class="ic">'+ic[r.st]+'</span><div><b>'+r.t+'</b><small>'+r.d+'</small></div></div>'}).join('');
+  return '<div class="wrap" style="padding-top:12px"><div class="brand" style="font-size:44px;margin-top:6px">Check this device</div><p class="sub" style="margin-bottom:6px">Runs a quick test of saving, sound, screen and speed on this phone. Share the result if something does not work.</p>'+rows+
+   '<div class="stack"><button class="btn big" data-act="dcbeep">Play test beep</button><button class="btn alt big" data-act="dcagain">Run the check again</button><button class="btn alt big" data-act="dccopy">Copy results</button></div>'+
+   '<label class="lbl" for="dctx">Results text</label><textarea id="dctx" class="txt" rows="8" readonly>'+esc(dcText())+'</textarea></div>'+
+   '<div class="bar-b"><div class="in"><button class="btn alt" data-act="dcback">Back</button></div></div>';
+}
+
+function render(){
+  stopTick();
+  var c0=document.getElementById('cw');if(c0)G.cw=c0.value;
+  if(!sess&&G.screen==='gym')snapForm();
+  var fbEl=document.getElementById('fb');if(fbEl&&G.screen==='report')G.rep.fb=fbEl.value;
+  var app=$('#app'),key='';
+  if(!sess&&G.screen==='device'){app.innerHTML=deviceHTML()+'<div class="toast" id="toast"></div>';mountAnim('');return}
+  if(!sess&&G.screen==='report'){app.innerHTML=reportHTML()+'<div class="toast" id="toast"></div>';mountAnim('');return}
+  if(!sess&&G.screen==='gym'){app.innerHTML=gymHTML()+'<div class="toast" id="toast"></div>';mountAnim('');return}
+  if(!sess){app.innerHTML=gateHTML()+'<div class="toast" id="toast"></div>';mountAnim('');return}
+  if(sess.stage==='done'){app.innerHTML=finHTML()+'<div class="toast" id="toast"></div>';mountAnim('');return}
+  if(sess.i<0){app.innerHTML=briefHTML()+'<div class="toast" id="toast"></div>';mountAnim('');return}
+  var st=sess.steps[sess.i];
+  if(st.t==='ex'){
+    app.innerHTML=exHTML(st);key=st.e.anim;
+    if(sess.stage==='rest'){
+      var upd=function(){
+        if(!sess||!sess.rest)return stopTick();
+        var r=(sess.rest.end-Date.now())/1000,b=document.getElementById('rb'),mm=document.getElementById('rm');
+        if(b)b.textContent=mmss(r);
+        if(mm)mm.style.width=Math.min(100,100*(1-r/sess.rest.len))+'%';
+        if(r<=0){beep(2);endRest();toast('Rest is over. Start your next set.')}
+      };
+      upd();if(sess&&sess.rest)tick=setInterval(upd,250);
+    }
+  }else{
+    app.innerHTML=timedHTML(st);key=st.e.anim;
+    if(sess.tm&&sess.tm.run){tick=setInterval(tmTick,250)}
+  }
+  app.insertAdjacentHTML('beforeend','<div class="toast" id="toast"></div>');
+  paused=false;mountAnim(key);
+}
+
+/* ============ EVENTS ============ */
+document.addEventListener('click',function(ev){
+  unlockAudio();
+  var t=ev.target.closest('[data-act]');if(!t)return;
+  var a=t.getAttribute('data-act'),ov=$('#ov');
+  if(a==='pick'){G.day=+t.getAttribute('data-i');G.err=false;G.hint=false;G.touched=true;render();return}
+  if(a==='hint'){G.hint=true;render();return}
+  if(a==='unlock'){tryUnlock();return}
+  if(a==='anim'){paused=!paused;return}
+  if(a==='device'){G.screen='device';runChecks();render();window.scrollTo(0,0);return}
+  if(a==='dcagain'){runChecks();render();return}
+  if(a==='dcback'){G.screen='';render();window.scrollTo(0,0);return}
+  if(a==='dcbeep'){beep(1);toast('Did you hear a beep? If not, check silent mode and volume.');return}
+  if(a==='dccopy'){var tx=dcText();var sel2=function(){var el=document.getElementById('dctx');if(el){el.focus();el.select()}toast('Select and copy the text below.')};try{navigator.clipboard.writeText(tx).then(function(){toast('Copied. Paste it into a message.')}).catch(sel2)}catch(e){sel2()}return}
+  if(a==='hintx'){ls.set('ip:nohint','1');render();return}
+  if(a==='report'){G.screen='report';render();window.scrollTo(0,0);return}
+  if(a==='repback'){var fb0=document.getElementById('fb');if(fb0)G.rep.fb=fb0.value;G.screen='';render();window.scrollTo(0,0);return}
+  if(a==='rtog'){var fb1=document.getElementById('fb');if(fb1)G.rep.fb=fb1.value;var k0=t.getAttribute('data-k');G.rep[k0]=!G.rep[k0];var y7=window.pageYOffset;render();window.scrollTo(0,y7);return}
+  if(a==='repdl'){saveReport('txt');return}
+  if(a==='repjson'){saveReport('json');return}
+  if(a==='repbackup'){saveReport('backup');return}
+  if(a==='repcopy'){copyReport();return}
+  if(a==='dayoff'){var id0=t.getAttribute('data-id'),o0=G.off[G.day]=G.off[G.day]||[],ix=o0.indexOf(id0);if(ix<0)o0.push(id0);else o0.splice(ix,1);var y3=window.pageYOffset;render();window.scrollTo(0,y3);return}
+  if(a==='gmnote'){toast('Marked missing in My gym. Change it from the My gym card.');return}
+  if(a==='allon'){G.off[G.day]=[];var y4=window.pageYOffset;render();window.scrollTo(0,y4);return}
+  if(a==='rememberoff'){
+    var offs=G.off[G.day]||[],eqs=buildSteps(G.day,[],[]).filter(function(x){return offs.indexOf(x.e.id)>=0}).map(function(x){return eqOf(x.e)}).filter(Boolean);
+    MEM.gym=MEM.gym||{missing:[],custom:[],set:true};MEM.gym.missing=MEM.gym.missing||[];
+    eqs.forEach(function(q){if(MEM.gym.missing.indexOf(q)<0)MEM.gym.missing.push(q)});
+    G.off[G.day]=[];saveMem();render();toast('Saved as not in your gym.');return;
+  }
+  if(a==='cday'){snapForm();var di=+t.getAttribute('data-i'),dx=G.cf.days.indexOf(di);if(dx<0)G.cf.days.push(di);else G.cf.days.splice(dx,1);var y5=window.pageYOffset;render();window.scrollTo(0,y5);return}
+  if(a==='cadd'){
+    snapForm();var nm0=(G.cf.name||'').trim();
+    if(nm0.length<2){var er=document.getElementById('cerr');if(er)er.textContent='Type the machine name first.';return}
+    MEM.gym=MEM.gym||{missing:[],custom:[],set:true};MEM.gym.custom=MEM.gym.custom||[];
+    MEM.gym.custom.push({id:Date.now().toString(36),name:nm0,pat:G.cf.pat,days:G.cf.days.slice().sort(),note:(G.cf.note||'').trim()});
+    G.cf={name:'',pat:G.cf.pat,days:[],note:''};['cn','cnote'].forEach(function(i2){var e2=document.getElementById(i2);if(e2)e2.value=''});saveMem();render();toast('Machine added and saved.');return;
+  }
+  if(a==='cdel'){
+    var cid=t.getAttribute('data-id');MEM.gym.custom=(MEM.gym.custom||[]).filter(function(m){return m.id!==cid});saveMem();var y6=window.pageYOffset;render();window.scrollTo(0,y6);return;
+  }
+  if(a==='gym'){G.gm=gymMissing().slice();G.screen='gym';render();window.scrollTo(0,0);return}
+  if(a==='gear'){var gid=t.getAttribute('data-id'),gi=G.gm.indexOf(gid);if(gi<0)G.gm.push(gid);else G.gm.splice(gi,1);var y=window.pageYOffset;render();window.scrollTo(0,y);return}
+  if(a==='gearall'){G.gm=[];var y2=window.pageYOffset;render();window.scrollTo(0,y2);return}
+  if(a==='gymcancel'){G.screen='';render();window.scrollTo(0,0);return}
+  if(a==='gymsave'){MEM.gym=MEM.gym||{custom:[]};MEM.gym.missing=G.gm.slice();MEM.gym.set=true;saveMem();G.screen='';render();window.scrollTo(0,0);toast('Gym saved. Your plan is updated.');return}
+  if(a==='resume'){resumeSession();return}
+  if(a==='discard'){if(G.disc){G.disc=false;clearSess();render()}else{G.disc=true;render()}return}
+  if(!sess)return;
+  if(a==='begin'){sess.start=Date.now();enter(nextTodo()<0?0:Math.max(0,sess.steps.findIndex(function(s){return s.st==='todo'})));return}
+  if(a==='go'){sess.stage='set';saveSess(true);render();return}
+  if(a==='wt'){var wi0=document.getElementById('wti');if(wi0){var v=parseFloat(wi0.value||'0')+parseFloat(t.getAttribute('data-d'));wi0.value=Math.max(0,v)}return}
+  if(a==='setdone'){
+    var st=sess.steps[sess.i],e=st.e,wi=document.getElementById('wti');
+    st.prog=(st.prog||0)+1;sess.setsDone++;
+    if(wi&&wi.value!==''){
+      var arr=sess.wl[e.id]=sess.wl[e.id]||[];arr[st.prog-1]=wi.value;
+      MEM.w[e.id]={d:ymd(),ws:arr.filter(function(x){return x!==undefined&&x!==null&&x!==''})};saveMem();
+    }
+    if(st.prog<e.sets){startRest(e.rest)}else{st.st='done';bump('done',e.id);advance()}
+    return;
+  }
+  if(a==='skiprest'){endRest();return}
+  if(a==='plus15'){if(sess.rest){sess.rest.end+=15000;sess.rest.len+=15}return}
+  if(a==='tm'){tmToggle();return}
+  if(a==='nextstep'){sess.steps[sess.i].st='done';bump('done',sess.steps[sess.i].e.id);advance();return}
+  if(a==='plan'){ov.innerHTML=planHTML();return}
+  if(a==='busy'){ov.innerHTML=busyHTML();return}
+  if(a==='closeov'){if(t.classList.contains('ov')&&ev.target!==t)return;ov.innerHTML='';return}
+  if(a==='jump'){
+    ov.innerHTML='';var ji=+t.getAttribute('data-i');
+    if(sess.i<0)sess.start=Date.now();
+    if(ji===sess.i&&sess.i>=0)return;
+    enter(ji);return;
+  }
+  if(a==='mv'){moveStep(+t.getAttribute('data-i'),+t.getAttribute('data-d'));return}
+  if(a==='redo'){var ri=+t.getAttribute('data-i'),rs=sess.steps[ri];rs.st='todo';rs.prog=0;ov.innerHTML='';if(sess.i<0)sess.start=Date.now();enter(ri);return}
+  if(a==='later'){ov.innerHTML='';doLater();return}
+  if(a==='swap'){ov.innerHTML='';doSwap(t.getAttribute('data-sw'));return}
+  if(a==='skiptoday'){ov.innerHTML='';sess.steps[sess.i].st='skipped';bump('skipped',sess.steps[sess.i].e.id);sess.skipped++;advance();return}
+  if(a==='exit'){ov.innerHTML='';saveSess();sess=null;stopTick();render();window.scrollTo(0,0);return}
+  if(a==='endnow'){ov.innerHTML='';finish();return}
+  if(a==='home'){sess=null;stopTick();render();window.scrollTo(0,0);return}
+});
+document.addEventListener('change',function(ev){
+  var el=ev.target;if(!el||el.id!=='rf'||!el.files||!el.files[0])return;
+  var fr=new FileReader();
+  fr.onload=function(){
+    try{
+      var o=JSON.parse(fr.result),m=o&&o.mem;
+      if(!m||!Array.isArray(m.log)||typeof m.w!=='object')throw new Error('bad');
+      MEM=m;normMem();saveMem();
+      if(o.session&&o.session.active){SAVED=o.session;ls.set(K_SESS,JSON.stringify(o.session));dbWrite('session',o.session)}
+      render();toast('Backup restored.');
+    }catch(e){toast('That file is not an Iron Plan backup.')}
+  };
+  fr.readAsText(el.files[0]);el.value='';
+});
+document.addEventListener('input',function(ev){
+  if(ev.target&&ev.target.id==='fb'){G.rep.fb=ev.target.value;var rp=document.getElementById('rp');if(rp)rp.value=reportText()}
+});
+document.addEventListener('visibilitychange',function(){
+  if(document.visibilityState==='visible'&&sess&&sess.i>=0&&sess.stage!=='done'){try{if(navigator.wakeLock)navigator.wakeLock.request('screen').catch(function(){})}catch(e){}}
+});
+document.addEventListener('keydown',function(ev){
+  if(ev.key==='Enter'&&ev.target&&ev.target.id==='cw'){tryUnlock()}
+});
+function tryUnlock(){
+  var cw=document.getElementById('cw');
+  var v=(cw&&cw.value||'').replace(/[^a-z]/gi,'').toUpperCase();
+  if(v===CODEWORD){
+    beep(1);var sv=activeSaved();
+    if(sv&&sv.day===G.day)resumeSession();else startSession();
+  }else{G.err=true;render();var c2=document.getElementById('cw');if(c2)c2.focus()}
+}
+
+window.__IP={A:A,DAYS:DAYS,buildSteps:buildSteps,frame:frame,prep:prep,E:E,T:T,S:S,phases:phases,get sess(){return sess},get MEM(){return MEM},get SAVED(){return SAVED}};
+initStore();
+render();
+})();
+</script>
+<script>
+(function(){
+  if(!("serviceWorker" in navigator)||location.protocol.indexOf("http")!==0)return;
+  window.addEventListener("load",function(){
+    navigator.serviceWorker.register("sw.js").then(function(){try{caches.open("ironplan-v1").then(function(c){return c.add(location.href)}).catch(function(){})}catch(e){}}).catch(function(){});
+  });
+})();
+</script>
+</body>
+</html>
